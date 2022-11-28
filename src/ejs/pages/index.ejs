@@ -57,16 +57,40 @@ const img_path = assetsRelative() + 'img';
 
   <!-- local CSS -->
   <%- include(INCLUDE_PATH + 'foundation/_styles', { css_path: assetsRelative() + 'css' }); -%>
+
+  <!-- adobe font -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'hzf0fzc',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
 </head>
 
 <body id="<%= page_name; %>">
 
 <%# start page content -%>
 
+<!-- header -->
+<%- include(INCLUDE_PATH + 'foundation/_header'); _%>
+
+<!-- key visual -->
+<%- include(INCLUDE_PATH + 'layout/_key'); _%>
+
+
+<!-- footer -->
+<%- include(INCLUDE_PATH + 'foundation/_footer'); _%>
+
+
 <%# end page content -%>
 
-  <!-- local JS -->
-  <%- include(INCLUDE_PATH + 'foundation/_scripts.ejs', { js_path: assetsRelative() + 'js' }); -%>
+<!-- local JS -->
+<%- include(INCLUDE_PATH + 'foundation/_scripts.ejs', { js_path: assetsRelative() + 'js' }); -%>
 
 </body>
 </html>
