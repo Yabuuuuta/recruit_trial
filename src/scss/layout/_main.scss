@@ -1,3 +1,26 @@
 .l-main{
+    padding: 14.4rem 12rem;
+
+    &__title{
+        font-size: 6rem;
+        font-weight: normal;
+
+        &--en{
+            font-size: 1.2rem;
+            display: block;
+            color: rgba(69, 85, 106, .5);
+            letter-spacing: .1em;
+            position: relative;
+
+            &::befor{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 20px;
+                height: 1px;
+                background-color: #45556A;
+            }
+        }
+    }
     
 }

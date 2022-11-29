@@ -77,14 +77,17 @@ const img_path = assetsRelative() + 'img';
 <%# start page content -%>
 
 <!-- header -->
-<%- include(INCLUDE_PATH + 'foundation/_header'); _%>
+<%- include(INCLUDE_PATH + 'layout/_header'); _%>
 
+<main>
 <!-- key visual -->
-<%- include(INCLUDE_PATH + 'layout/_key'); _%>
+<%- include(INCLUDE_PATH + 'object/project/_key'); _%>
+<%- include(INCLUDE_PATH + 'layout/_about'); _%>
 
+</main>
 
 <!-- footer -->
-<%- include(INCLUDE_PATH + 'foundation/_footer'); _%>
+<%- include(INCLUDE_PATH + 'layout/_footer'); _%>
 
 
 <%# end page content -%>
