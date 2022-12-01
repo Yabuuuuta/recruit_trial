@@ -55,20 +55,26 @@ const img_path = assetsRelative() + 'img';
   <meta name="twitter:image" content="<%= info[page_name].ogp_image; %>" />
   <meta name="twitter:description" content="<%= info[page_name].description; %>" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- adobe font -->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'hzf0fzc',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+  
+
   <!-- local CSS -->
   <%- include(INCLUDE_PATH + 'foundation/_styles', { css_path: assetsRelative() + 'css' }); -%>
 
-  <!-- adobe font -->
-  <script>
-    (function(d) {
-      var config = {
-        kitId: 'hzf0fzc',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
 
 </head>
 
@@ -79,11 +85,15 @@ const img_path = assetsRelative() + 'img';
 <!-- header -->
 <%- include(INCLUDE_PATH + 'layout/_header'); _%>
 
+<!-- menu -->
+<%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
+
+
 <main>
-<!-- key visual -->
 <%- include(INCLUDE_PATH + 'object/project/_key'); _%>
 <%- include(INCLUDE_PATH + 'layout/_about'); _%>
-
+<%- include(INCLUDE_PATH + 'layout/_number'); _%>
+<%- include(INCLUDE_PATH + 'layout/_product'); _%>
 </main>
 
 <!-- footer -->

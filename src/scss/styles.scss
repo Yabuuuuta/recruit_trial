@@ -1,16 +1,18 @@
+
 /* ==========================================================================
 Setting ブラウザごとのデフォルトのスタイルをリセットするためのCSSや、サイトの基礎、変数
 ========================================================================= */
-@import 'setting/variable/_width';
-
-// Fonts
-// Colors
-  
-// Animations
+@import 'setting/variable/_color';
+@import 'setting/variable/_font-size';
+@import 'setting/variable/_index';
+@import 'setting/variable/_line-height';
+@import 'setting/variable/_z-index';
+@import 'setting/variable/_font-family';
 
 /* ==========================================================================
 Tool ヘッダーやメインコンテンツ、サイドバー、フッターなどのレイアウト分け
 ========================================================================== */
+@import 'tool/_index';
 @import 'tool/_mixin';
 
 /* ==========================================================================
@@ -31,5 +33,14 @@ Layout
 /* ==========================================================================
 Object 繰り返されるビジュアルパーターン
 ========================================================================== */
-
+@import 'object/project/_header';
+@import 'object/project/_menu';
 @import 'object/project/_key';
+
+@import 'object/component/_block';
+@import 'object/component/_contact';
+@import 'object/component/_paragraph';
+@import 'object/component/_logo';
+
+
+

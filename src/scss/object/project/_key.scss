@@ -29,14 +29,29 @@
         transform: translateY(-50%);
     }
 
+
+    &__title{
+        font-size: 2.6rem;
+        font-weight: normal;
+    }
+
     &__logo{
+        margin-top: 6.1rem;
         img{
             width: 100%;
             height: auto;
         }
     }
 
-    &__title{
-        font-size: 2.6rem;
+    &__subtitle{
+        font-size: 3.8rem;
+        margin-top: 5.9rem;
+
+        &--en{
+            font-family: $lato;
+            font-size: 1.8rem;
+            letter-spacing: .215em;
+        }
     }
+
 }

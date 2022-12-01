@@ -1,0 +1,87 @@
+.p-header{
+
+    &__logo{
+        font-size: 2.2rem;
+    }
+
+    &__info{
+        margin-left: auto;
+        display: flex;
+    }
+
+    &__tel{
+        margin-right: 30px;
+
+        &--num{
+            display: flex;
+            font-family: $lato;
+
+            dt{
+                font-size: 1.3rem;
+                margin-right: 10px;
+                position: relative;
+                &::after{
+                    content: "";
+                    display: inline-block;
+                    height: 1px;
+                    width: 30px;
+                    position: absolute;
+                    background-color: #fff;
+                    position: absolute;
+                    bottom: 8px;
+                    left: 0;
+                }
+            }
+            dd{
+                font-size: 2.4rem;
+                line-height: calc(32 / 24);
+            }
+        }
+        &--time{
+            font-size: 1.1rem;
+            font-family: $hiragino;
+        }
+    }
+
+    &__contact{
+        &--btn{
+        width: 200px;
+        margin-right: 43px;
+        font-family: $hiragino;
+        font-size: 1.4rem;
+        font-weight: bold;
+        }
+    }
+
+    &__bgr{
+        position: relative;
+        height: 35px;
+        width: 34px;
+        top: -8px;
+
+        &--title{
+            font-size: 1.1rem;
+            text-align: center;
+        }
+       
+        span{
+            display: inline-block;
+            height: 1px;
+            width: 34px;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            
+
+            &:nth-of-type(1){
+                bottom: 7px;
+            }
+            &:nth-of-type(2){
+                bottom: 0;
+            }
+        }
+    }    
+}
+
+
+

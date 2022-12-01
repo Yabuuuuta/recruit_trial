@@ -1,9 +1,27 @@
-@use 'setting/varuable/_width' as width;
+@use 'setting/variable' as var;
+@use 'tool/function' as func;
+// @use 'tool/mixin' as mixin;
+
+@viewport {
+    width: device-width;
+    initial-scale: 1;
+}
 
 html{
-    font-size: 62.5%;
     width: 100%;
     height: 100%;
+    font-size: calc((10 * 100 / 16) * 1%);
+    
+
+    // @include pc{
+    //     font-size: ($fz-root * 100 / 16) * 1%;
+    // }
+
+    // @include sp{
+    //     font-size: func.cv-vw(var.$fz-root);
+    // }
+
+
 }
 body{
     width: inherit;
@@ -11,7 +29,8 @@ body{
     font-family: noto-sans-cjk-jp, sans-serif;
     font-style: normal;
     font-weight: 400;
-    color: #45556A;
+    color: $blue;
+    line-height: $small;
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
