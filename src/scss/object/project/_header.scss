@@ -7,49 +7,53 @@
     &__info{
         margin-left: auto;
         display: flex;
+        align-items: center;
     }
 
     &__tel{
-        margin-right: 30px;
+        margin-right: vw-calc(30);
 
         &--num{
             display: flex;
             font-family: $lato;
+            align-items: center;
 
             dt{
-                font-size: 1.3rem;
+                font-size: vw-calc(13);
                 margin-right: 10px;
                 position: relative;
                 &::after{
                     content: "";
                     display: inline-block;
                     height: 1px;
-                    width: 30px;
+                    width: vw-calc(30);
                     position: absolute;
                     background-color: #fff;
                     position: absolute;
-                    bottom: 8px;
+                    bottom: vw-calc(8);
                     left: 0;
                 }
             }
             dd{
-                font-size: 2.4rem;
+                font-size: vw-calc(24);
                 line-height: calc(32 / 24);
             }
         }
+
         &--time{
-            font-size: 1.1rem;
+            font-size: vw-calc(11);
             font-family: $hiragino;
         }
     }
 
     &__contact{
         &--btn{
-        width: 200px;
-        margin-right: 43px;
+        width: vw-calc(200);
+        margin-right: vw-calc(43);
         font-family: $hiragino;
-        font-size: 1.4rem;
+        font-size: vw-calc(14);
         font-weight: bold;
+        height: vw-calc(48);
         }
     }
 

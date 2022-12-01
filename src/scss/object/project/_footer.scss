@@ -1,0 +1,26 @@
+.p-footer{
+    color: $white;
+
+    &__first{
+        background-color: $bg-gray;
+
+
+    }
+    &__second{
+        background-color: $bg-black;
+        font-size: 1.4rem;
+
+    }
+
+    &__inner{
+        max-width: $width-inner-pc;
+        margin: 0 auto;
+    }
+
+    &__links{
+        list-style: none;
+        display: flex;
+    }
+
+
+}

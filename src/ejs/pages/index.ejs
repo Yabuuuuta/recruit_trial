@@ -83,7 +83,9 @@ const img_path = assetsRelative() + 'img';
 <%# start page content -%>
 
 <!-- header -->
-<%- include(INCLUDE_PATH + 'layout/_header'); _%>
+<header class="l-header">
+  <%- include(INCLUDE_PATH + 'object/project/_header'); _%>
+</header>
 
 <!-- menu -->
 <%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
@@ -91,14 +93,23 @@ const img_path = assetsRelative() + 'img';
 
 <main>
 <%- include(INCLUDE_PATH + 'object/project/_key'); _%>
-<%- include(INCLUDE_PATH + 'layout/_about'); _%>
-<%- include(INCLUDE_PATH + 'layout/_number'); _%>
-<%- include(INCLUDE_PATH + 'layout/_product'); _%>
+
+<section class="l-main">
+  <%- include(INCLUDE_PATH + 'object/project/_about'); _%>
+</section> 
+<section class="l-main">
+  <%- include(INCLUDE_PATH + 'object/project/_number'); _%>
+</section> 
+<section class="l-main">
+  <%- include(INCLUDE_PATH + 'object/project/_product'); _%>
+</section>
+
 </main>
 
 <!-- footer -->
-<%- include(INCLUDE_PATH + 'layout/_footer'); _%>
-
+<footer class="l-footer">
+  <%- include(INCLUDE_PATH + 'object/project/_footer'); _%>
+</footer>
 
 <%# end page content -%>
 

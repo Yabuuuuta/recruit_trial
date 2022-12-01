@@ -8,6 +8,9 @@ Setting ブラウザごとのデフォルトのスタイルをリセットする
 @import 'setting/variable/_line-height';
 @import 'setting/variable/_z-index';
 @import 'setting/variable/_font-family';
+@import 'setting/variable/_calc';
+@import 'setting/variable/_width';
+
 
 /* ==========================================================================
 Tool ヘッダーやメインコンテンツ、サイドバー、フッターなどのレイアウト分け
@@ -36,11 +39,14 @@ Object 繰り返されるビジュアルパーターン
 @import 'object/project/_header';
 @import 'object/project/_menu';
 @import 'object/project/_key';
+@import 'object/project/_footer';
+
 
 @import 'object/component/_block';
 @import 'object/component/_contact';
 @import 'object/component/_paragraph';
 @import 'object/component/_logo';
+@import 'object/component/_main-title';
 
 
 

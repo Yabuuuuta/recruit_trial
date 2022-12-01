@@ -25,18 +25,18 @@
         width: percentage(563px / 720px);
         position: absolute;
         top: 50%;
-        right: percentage(37px / 563px);
-        transform: translateY(-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
 
     &__title{
-        font-size: 2.6rem;
+        font-size: vw-calc(26);
         font-weight: normal;
     }
 
     &__logo{
-        margin-top: 6.1rem;
+        margin-top: vw-calc(61);
         img{
             width: 100%;
             height: auto;
@@ -44,14 +44,20 @@
     }
 
     &__subtitle{
-        font-size: 3.8rem;
-        margin-top: 5.9rem;
+        font-size: vw-calc(38);
+        margin-top: vw-calc(59);
 
         &--en{
             font-family: $lato;
-            font-size: 1.8rem;
+            font-size: vw-calc(18);
             letter-spacing: .215em;
+            margin-top: vw-calc(20);
         }
+    }
+
+    &__text{
+        font-size: vw-calc(16);
+        margin-top: vw-calc(59);
     }
 
 }
