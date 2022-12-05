@@ -55,11 +55,12 @@ const img_path = assetsRelative() + 'img';
   <meta name="twitter:image" content="<%= info[page_name].ogp_image; %>" />
   <meta name="twitter:description" content="<%= info[page_name].description; %>" />
 
+  <!-- adobe font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
 
-    <!-- adobe font -->
+  <!-- adobe font -->
     <script>
       (function(d) {
         var config = {
@@ -87,12 +88,13 @@ const img_path = assetsRelative() + 'img';
   <%- include(INCLUDE_PATH + 'object/project/_header'); _%>
 </header>
 
-<!-- menu -->
-<%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
-
-
 <main>
 <%- include(INCLUDE_PATH + 'object/project/_key'); _%>
+
+<!-- menu -->
+<div class="l-main p-menu">
+  <%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
+</div>
 
 <section class="l-main">
   <%- include(INCLUDE_PATH + 'object/project/_about'); _%>
@@ -102,6 +104,9 @@ const img_path = assetsRelative() + 'img';
 </section> 
 <section class="l-main">
   <%- include(INCLUDE_PATH + 'object/project/_product'); _%>
+</section>
+<section>
+  <%- include(INCLUDE_PATH + 'object/project/_contact'); _%>
 </section>
 
 </main>

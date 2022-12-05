@@ -1,0 +1,12 @@
+$prefix: 'u-hov';
+
+.#{$prefix}{
+    @include pc{
+        transition: .3s;
+        &:hover{
+            opacity: .7;
+            transition: .3s;
+            cursor: pointer;
+        }
+    }
+}

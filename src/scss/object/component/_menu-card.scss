@@ -1,0 +1,17 @@
+.c-menu-card{
+    &__title{
+        font-weight: bold;
+        position: relative;
+        padding-left: 8.8rem;
+        padding-bottom: 2.8rem;
+
+        &::before{
+            position: absolute;
+            display: inline-block;
+            width: 5.1rem;
+            height: 5.1rem;
+            left: 0;
+            top: -1rem;
+        }
+    }
+}

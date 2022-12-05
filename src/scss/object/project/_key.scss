@@ -29,14 +29,14 @@
         transform: translate(-50%, -50%);
     }
 
-
     &__title{
         font-size: vw-calc(26);
         font-weight: normal;
+        margin-top: vw-calc(175);
     }
 
     &__logo{
-        margin-top: vw-calc(61);
+        margin-top: vw-calc(55 );
         img{
             width: 100%;
             height: auto;
@@ -46,18 +46,29 @@
     &__subtitle{
         font-size: vw-calc(38);
         margin-top: vw-calc(59);
+        line-height: 0.974;
 
         &--en{
             font-family: $lato;
             font-size: vw-calc(18);
             letter-spacing: .215em;
             margin-top: vw-calc(20);
+            line-height: 2.333;
         }
     }
 
     &__text{
         font-size: vw-calc(16);
-        margin-top: vw-calc(59);
+        margin-top: vw-calc(39);
+        font-weight: bold ;
+    }
+
+    &__btn{
+        text-align: right;
+        font-size: vw-calc(11);
+        padding-right: vw-calc(72);
+        letter-spacing: .025em;
+        padding-top: vw-calc(75);
     }
 
 }

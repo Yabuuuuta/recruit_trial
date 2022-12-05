@@ -1,0 +1,11 @@
+.pc-hide{
+    @include pc{
+        display: none;
+    }
+}
+
+.sp-hide{
+    @include mobile{
+        display: none;
+    }
+}

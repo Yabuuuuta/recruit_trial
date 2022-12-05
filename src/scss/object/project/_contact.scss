@@ -1,0 +1,37 @@
+.p-contact{
+    background-color: $bg-gray;
+    color: $white;
+    height: 36rem;
+    text-align: center;
+
+    &__inner{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+
+    }
+
+    &__title{
+        font-size: 1.6rem;
+    }
+    &__tel{
+        margin-top: 2.8rem;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &--icon{
+            margin-right: 2.6rem;
+        }
+        &--num{
+            font-family: $lato;
+            font-weight: 100;
+            font-size: 3.6rem;
+            line-height: .72; 
+            letter-spacing: .020em;
+        }
+        &--time{
+            letter-spacing: .025em;
+            font-size: 1.3rem;
+        }
+    }
+}

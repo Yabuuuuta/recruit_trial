@@ -21,18 +21,10 @@
             dt{
                 font-size: vw-calc(13);
                 margin-right: 10px;
-                position: relative;
-                &::after{
-                    content: "";
-                    display: inline-block;
-                    height: 1px;
-                    width: vw-calc(30);
-                    position: absolute;
-                    background-color: #fff;
-                    position: absolute;
-                    bottom: vw-calc(8);
-                    left: 0;
-                }
+                letter-spacing: .2em;
+                border-bottom: 1px solid #fff;
+                line-height: 1.333;
+                padding-bottom: vw-calc(3);
             }
             dd{
                 font-size: vw-calc(24);
@@ -54,6 +46,7 @@
         font-size: vw-calc(14);
         font-weight: bold;
         height: vw-calc(48);
+        
         }
     }
 

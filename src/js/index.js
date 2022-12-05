@@ -37,3 +37,5 @@ import EVENTS from '~/constants/event-names';
   }
   window.addEventListener(EVENTS.LOAD, onLoad);
 })();
+
+
