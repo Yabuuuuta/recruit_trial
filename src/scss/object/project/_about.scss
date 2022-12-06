@@ -1,0 +1,107 @@
+.p-about{
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &__ttl{
+        padding-top: 14.4rem;
+
+        &-main{
+            &--alo{
+                font-size: 4.8rem;
+            }
+
+        }
+        &-sub{
+
+        }
+    }
+
+    &__left{
+        width: 50%;
+
+        &-first{
+            padding-bottom:12.7rem;
+            padding-right: percentage(120px / 680px);
+
+
+        }
+        &-second{
+            position: relative;
+            padding: 11.8rem percentage(120px / 680px) 14.7rem 0;
+            &::after{
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: $back;
+                display: block;
+                width: 50vw;
+                height: 100%;
+                content: '';
+                background-color: #F5F5F5;
+            }
+        }
+
+    }
+
+    &__right{
+        width: 50%;
+        position: relative;
+
+        &::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: $back;
+            display: block;
+            width: 75vw;
+            height: 100%;
+            content: '';
+            background-color: $bg-blue;
+        }
+
+        &-fig{
+            padding-top: 14rem;
+            picture{
+                display: block;
+                padding-left: percentage(76px/680px);
+                padding-right: percentage(146px/680px);
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+    }
+
+    &__alo{
+        color: #fff;
+
+        &-ttl{
+            padding-top: 5rem;
+            padding-left: percentage(120px/ 680px);
+            &--main{
+               font-size: 4.8rem;     
+            }
+            &--sub{
+                font-size: 1.2rem;
+                &::after{
+                }
+            }
+        }
+        &-txt{
+            padding-left: percentage(120px/ 680px);
+            padding-top: 7.1rem;
+            font-size: 1.4rem;
+        }
+        &-img{
+            position: absolute;
+            margin-left: percentage(120px / 720px);
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

@@ -19,17 +19,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &--icon{
+        &-icon{
             margin-right: 2.6rem;
         }
-        &--num{
+        &-num{
             font-family: $lato;
-            font-weight: 100;
+            font-weight: 300;
             font-size: 3.6rem;
             line-height: .72; 
             letter-spacing: .020em;
         }
-        &--time{
+        &-time{
             letter-spacing: .025em;
             font-size: 1.3rem;
         }

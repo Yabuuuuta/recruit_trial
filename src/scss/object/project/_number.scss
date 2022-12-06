@@ -1,0 +1,32 @@
+.p-number{
+    display: flex;
+    align-items: center;
+
+    &__graph{
+        width: 50%;
+        position: relative;
+
+        &-ttl{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &-fig{
+            padding-right: percentage(30px/600px);
+            picture{
+                display: block;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+
+        }
+
+    }
+
+    &__paragraph{
+        width: 50%;
+        padding-left: percentage(120px/1200px);
+    }
+}

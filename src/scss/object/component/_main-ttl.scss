@@ -1,19 +1,27 @@
-.c-main-title{
+.c-main-ttl{
     font-family: $lato;
-    font-size: 6rem;
     font-weight: normal;
 
-    &__en{
+    &__main{
+        font-size: 6rem;
+        line-height: 1.4;
+        font-weight: 400;
+        letter-spacing: .05em;
+    }
+
+    &__sub{
         font-size: 1.2rem;
         display: block;
         color: rgba(69, 85, 106, .5);
         letter-spacing: .1em;
         position: relative;
 
-        &::befor{
+        &::before{
             content: '';
             display: inline-block;
             position: absolute;
+            top: 50%;
+            left: -4rem;
             width: 20px;
             height: 1px;
             background-color: #45556A;

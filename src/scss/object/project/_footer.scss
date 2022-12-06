@@ -19,9 +19,13 @@
         list-style: none;
         font-size: 1.4rem;
 
-        &--item{
+        &-item{
             &:first-child{
                 padding-right: 4.5rem;
+            }
+            a{
+                color: #fff;
+                text-decoration: none;
             }
         }
     }

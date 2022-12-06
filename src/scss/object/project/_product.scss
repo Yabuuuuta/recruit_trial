@@ -1,0 +1,23 @@
+.p-product{
+    position: relative;
+
+    &::after{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: $back;
+        display: block;
+        width: 100vw;
+        height: 63.5rem;
+        content: '';
+        background-color: $bg-blue;
+    }
+
+
+    &__ttl{
+        color: $white;
+    }
+    &__paragraph{
+        color: $white;
+    }
+}

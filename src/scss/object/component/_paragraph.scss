@@ -1,0 +1,22 @@
+.c-paragraph{
+
+    &__head{
+        font-weight: bold;
+        &--big{
+            font-size: 3.2rem;
+            line-height: $large;
+            padding-top: 10.9rem ;
+        }
+
+        &--small{
+            font-size: 2.4rem;
+            line-height: $mediun;
+
+        }
+    }
+
+    &__text{
+        line-height: $small;
+        padding-top: 4.1rem;
+    }
+}

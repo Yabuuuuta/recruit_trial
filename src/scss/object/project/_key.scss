@@ -44,11 +44,13 @@
     }
 
     &__subtitle{
-        font-size: vw-calc(38);
-        margin-top: vw-calc(59);
-        line-height: 0.974;
+        &-ja{
+            font-size: vw-calc(38);
+            margin-top: vw-calc(59);
+            line-height: 0.974;
+        }
 
-        &--en{
+        &-en{
             font-family: $lato;
             font-size: vw-calc(18);
             letter-spacing: .215em;
