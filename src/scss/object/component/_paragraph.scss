@@ -1,18 +1,23 @@
 .c-paragraph{
 
     &__head{
-        font-weight: bold;
+        
         &--big{
             font-size: 3.2rem;
             line-height: $large;
-            padding-top: 10.9rem ;
+            padding-top: 10.9rem;
+            font-weight: 500;
+            font-style: normal;
+            color: $blue;
         }
 
         &--small{
             font-size: 2.4rem;
             line-height: $mediun;
-
-        }
+            font-weight: 500;
+            font-style: normal;
+            color: $blue;
+         }
     }
 
     &__text{

@@ -1,0 +1,30 @@
+.c-scroll-btn{
+    &__txt{
+        padding-right: 3em;
+        color: $white;
+        line-height: 1;
+
+    }
+    &__line{
+        position: relative;
+        display: inline-block;
+        background-color: rgba(255,255,255,.3);
+        top: 0;
+        right: 0;
+        width: .1rem;
+        height: 8rem;
+        overflow: hidden;
+
+        &::before{
+            content: "";
+            background: #fff;
+            animation: scroll-line 2.5s ease-in-out infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 1px;
+            height: 100%;
+        }
+    }
+}

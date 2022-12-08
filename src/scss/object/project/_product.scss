@@ -1,5 +1,7 @@
 .p-product{
     position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
 
     &::after{
         position: absolute;
@@ -15,9 +17,39 @@
 
 
     &__ttl{
+        padding-top: 14.6rem;
         color: $white;
+
+        &-main{
+
+        }
+        &-sub{
+            &::before{
+                background-color: #fff;
+            }
+        }
     }
     &__paragraph{
-        color: $white;
+
+        &-head{
+            padding-top: 3.7rem;
+            color: $white;
+        }
+        &-txt{
+            padding-top: 1.9rem;
+            color: $white;
+        }
     }
+
+    &__list{
+        padding-top: 7.5rem;
+        display: grid;
+        gap: 0 percentage(60px/1200px);
+        grid-template-areas: 
+            'item1 item1'
+            'item3 item4'
+        ;
+        grid-template-rows: 1fr 1fr;
+    }
+
 }

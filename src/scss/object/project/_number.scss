@@ -5,20 +5,23 @@
     &__graph{
         width: 50%;
         position: relative;
+        img{
+            width: 100%;
+            height: auto;
+        }
+
 
         &-ttl{
             position: absolute;
             top: 0;
             left: 0;
+            padding-top: vw-calc(35);
+            width: percentage(376px/600px);
         }
         &-fig{
             padding-right: percentage(30px/600px);
             picture{
                 display: block;
-            }
-            img{
-                width: 100%;
-                height: auto;
             }
 
         }

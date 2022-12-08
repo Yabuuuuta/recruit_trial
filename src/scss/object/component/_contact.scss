@@ -1,12 +1,21 @@
 .c-contact{
 
     &__btn{
-        border: 1px solid #fff;
+        border: 1px solid $white;
         align-self: center;
         display: flex;
         justify-content: center;
         align-items: center;
         font-weight: bold;
+
+        .is-in &{
+            border: 1px solid #000;
+
+            &:hover{
+                color: $white;
+                background-color: #000;
+            }
+        }
     }
 
 }

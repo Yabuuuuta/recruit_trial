@@ -6,7 +6,7 @@
 
     &__inner{
         padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-bottom: 8rem;
 
     }
 
@@ -21,17 +21,21 @@
         justify-content: center;
         &-icon{
             margin-right: 2.6rem;
+            height: 6.1rem;
         }
         &-num{
             font-family: $lato;
             font-weight: 300;
             font-size: 3.6rem;
-            line-height: .72; 
+            line-height: 1; 
             letter-spacing: .020em;
         }
+
         &-time{
             letter-spacing: .025em;
             font-size: 1.3rem;
+            line-height: 1;
+            padding-top: 1rem;
         }
     }
 }

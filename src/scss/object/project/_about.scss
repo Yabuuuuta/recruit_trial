@@ -5,6 +5,7 @@
 
     &__ttl{
         padding-top: 14.4rem;
+        color: $blue;
 
         &-main{
             &--alo{
@@ -13,7 +14,10 @@
 
         }
         &-sub{
-
+            color: rgba(69, 85, 106, .5);
+            &::before{
+                background-color: #45556A;
+            }
         }
     }
 
@@ -54,7 +58,7 @@
             left: 0;
             z-index: $back;
             display: block;
-            width: 75vw;
+            width: 50vw;
             height: 100%;
             content: '';
             background-color: $bg-blue;
@@ -64,8 +68,8 @@
             padding-top: 14rem;
             picture{
                 display: block;
-                padding-left: percentage(76px/680px);
-                padding-right: percentage(146px/680px);
+                padding-left: percentage(76px/720px);
+                padding-right: percentage(25px/720px);
                 img{
                     width: 100%;
                     height: auto;
@@ -77,27 +81,38 @@
 
     &__alo{
         color: #fff;
+        position: relative;
 
         &-ttl{
             padding-top: 5rem;
-            padding-left: percentage(120px/ 680px);
+            padding-left: percentage(180px/ 600px);
+
             &--main{
                font-size: 4.8rem;     
             }
             &--sub{
                 font-size: 1.2rem;
-                &::after{
+                
+                &::before{
+                    background-color: $white;
+                    left: 0;
+                    top: initial;
+                    bottom: -3rem;
+                    width: 4rem;
                 }
             }
         }
         &-txt{
-            padding-left: percentage(120px/ 680px);
+            padding-left: percentage(180px/ 600px);
             padding-top: 7.1rem;
             font-size: 1.4rem;
         }
         &-img{
+            margin-top: 6.8rem;
+            display: block;
             position: absolute;
-            margin-left: percentage(120px / 720px);
+            right: -4rem;
+            padding-left: percentage(120px / 720px);
             img{
                 width: 100%;
                 height: auto;

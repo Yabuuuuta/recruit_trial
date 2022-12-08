@@ -7,22 +7,31 @@
         <p class="p-product__ttl-sub c-main-ttl__sub">PRODUCT INFORMATION</p>
     </div>
     <div class="p-product__paragraph c-paragraph">
-        <p class="c-paragraph__head--small">この文章はダミーです。</p>
-        <p class="c-paragraph__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+        <p class="p-product__paragraph-head c-paragraph__head--small">この文章はダミーです。</p>
+        <p class="p-product__paragraph-txt c-paragraph__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
     </div>
 
     <div class="p-product__list">
         <% for (var i = 0; i < 4; i++) { %>
-        <dl class="p-product__list-item c-block">
-            <dt class="c-block__img">
+        <div class="p-product__list-item c-product-card">
+            <div class="c-product-card__img">
                 <picture>
                     <source srcset="assets/img/pic_product0<%= i+1 %>_sp.jpg" media="(max-width: 767px)" width="335" height="223">
                     <img src="assets/img/pic_product0<%= i+1 %>.jpg" alt="" width="570" height="380">
                 </picture>
-            </dt>
-            <dd class="c-block__head">ダミーダミーダミー</dd>
-            <dd class="c-block__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
-        </dl>
+            </div>
+            <div class="c-product-card__head">
+                <h3 class="c-product-card__head-ttl">ダミーダミーダミー</h3>
+                <div class="c-product-card__head-btn">
+                    <p class="c-product-card__head-btn-ttl">VIEW MORE</p>
+                    <button class="c-product-card__head-btn-more">
+                        <svg><circle cx="31" cy="31" r="30" style="stroke:rgba(0,0,0,.1)" fill="transparent"></circle></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="c-product-card__txt">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</div>
+        </div>
         <% } %>
     </div>
+
 </div>

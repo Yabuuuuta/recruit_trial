@@ -1,24 +1,24 @@
 .c-bgr{
+
+    .is-in &{
+        background-color: #000;
+    }
    
     &__title{
         font-size: 1.1rem;
         text-align: center;
+        font-family: $lato;
+        position: absolute;
+        .is-in &{
+            color: $white;
+        }
     }
 
     span{
+        background-color: #fff;
         display: inline-block;
         height: 1px;
-        width: 34px;
-        background-color: #fff;
+        width: 3.4rem;
         position: absolute;
-        left: 0;
-        
-
-        &:nth-of-type(1){
-            bottom: 7px;
-        }
-        &:nth-of-type(2){
-            bottom: 0;
-        }
     }
 }

@@ -61,17 +61,16 @@ const img_path = assetsRelative() + 'img';
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
 
   <!-- adobe font -->
-    <script>
-      (function(d) {
-        var config = {
-          kitId: 'hzf0fzc',
-          scriptTimeout: 3000,
-          async: true
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-      })(document);
-    </script>
-  
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'hzf0fzc',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 
   <!-- local CSS -->
   <%- include(INCLUDE_PATH + 'foundation/_styles', { css_path: assetsRelative() + 'css' }); -%>
@@ -103,9 +102,18 @@ const img_path = assetsRelative() + 'img';
 <section class="l-main">
   <%- include(INCLUDE_PATH + 'object/project/_product'); _%>
 </section>
+
+<div class="p-bottom-img">
+  <picture>
+      <source srcset="assets/img/pic_product_bottom_sp.jpg" media="(max-width: 768px)" width="375" height="250">
+      <img src="assets/img/pic_product_bottom.jpg" alt="" width="1440" height="480">
+  </picture>
+</div>
+
 <section>
   <%- include(INCLUDE_PATH + 'object/project/_contact'); _%>
 </section>
+
 
 </main>
 
