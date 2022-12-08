@@ -2,22 +2,34 @@
     color: $white;
     height: 12rem;
     background-color: $bg-black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include pc{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    @include mobile{
+        height: 20.5rem;
+    }
 
     &__inner{
-        display: flex;
-        justify-content: space-between;
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
+        @include pc{
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__links{
         display: flex;
         list-style: none;
         font-size: 1.4rem;
+        @include mobile{
+            justify-content: center;
+            border-bottom: 1px solid rgba(255,255,255,.2);
+            padding: 4.6rem 0;
+        }
 
         &-item{
             &:first-child{
@@ -33,6 +45,10 @@
     &__copy{
         font-family: $lato;
         font-size: 1.4rem;
+        @include mobile{
+            text-align: center;
+            padding-top: 2rem;
+        }
     }
 
 }

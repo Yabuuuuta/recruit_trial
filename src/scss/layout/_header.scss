@@ -16,5 +16,10 @@
             background-color: $white;
             color : #000;
         }
+
+        @include mobile{
+            position: fixed;
+            color: #000;
+        }
     }
 }

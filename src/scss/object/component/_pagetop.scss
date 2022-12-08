@@ -1,11 +1,12 @@
 .c-pagetop{
-    padding-bottom: 6.5rem;
     font-family: $lato;
     font-size: 1.4rem;
 
     &__text{
         position: relative;
         padding-top: 2rem;
+        letter-spacing: .05em;
+
         &::before{
             position: absolute;
             left: 50%;

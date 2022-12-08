@@ -1,5 +1,6 @@
 @use 'setting/variable' as var;
 @use 'tool/function' as func;
+@use 'setting/variablr/_width';
 // @use 'tool/mixin' as mixin;
 
 @viewport {
@@ -10,16 +11,15 @@
 html{
     width: 100%;
     height: 100%;
-    font-size: calc((10 * 100 / 16) * 1%);
     
 
-    // @include pc{
-    //     font-size: ($fz-root * 100 / 16) * 1%;
-    // }
+    @include pc{
+        font-size: calc((10 * 100 / 16) * 1%);
+    }
 
-    // @include sp{
-    //     font-size: func.cv-vw(var.$fz-root);
-    // }
+    @include mobile{
+        font-size: calc(10 / 375 * 100vw);
+    }
 
 
 }

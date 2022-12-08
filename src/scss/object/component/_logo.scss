@@ -1,13 +1,26 @@
 .c-logo{
     font-weight: 100;
-    align-self: baseline;
+    @include pc{
+        align-self: baseline;
+    }
+    @include mobile{
+        padding-left: 2rem;
+    }
 
     a{
         text-decoration: none;
         color: #fff;
+        display: inline-block;
 
         .is-in &{
             color: #000;
+        }
+
+        @include mobile{
+            &:not(.p-menu_logo) &{
+            color: #000;
+            }
+
         }
     }
 

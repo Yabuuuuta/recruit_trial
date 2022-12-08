@@ -4,6 +4,9 @@
         position: relative;
         padding-left: 8.8rem;
         padding-bottom: 2.8rem;
+        @include mobile{
+            padding-left: 5.9rem;
+        }
 
         &::before{
             position: absolute;

@@ -20,5 +20,8 @@
         height: 1px;
         width: 3.4rem;
         position: absolute;
+        @include mobile{
+            width: 2.8rem;
+        }
     }
 }

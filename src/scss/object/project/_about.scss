@@ -1,11 +1,18 @@
 .p-about{
-    display: flex;
     padding-top: 0;
     padding-bottom: 0;
+
+    @include pc{
+        display: flex;
+    }
 
     &__ttl{
         padding-top: 14.4rem;
         color: $blue;
+        @include mobile{
+            padding-top: 7.2rem;
+            padding-left: 1rem;
+        }
 
         &-main{
             &--alo{
@@ -22,17 +29,26 @@
     }
 
     &__left{
-        width: 50%;
+        @include pc{
+            width: 50%;
+        }
 
         &-first{
-            padding-bottom:12.7rem;
-            padding-right: percentage(120px / 680px);
-
+            @include pc{
+                padding-bottom:12.7rem;
+                padding-right: percentage(120px / 680px);
+            }
+            @include mobile{
+                padding-bottom: 7rem;
+            }
 
         }
         &-second{
             position: relative;
             padding: 11.8rem percentage(120px / 680px) 14.7rem 0;
+            @include mobile{
+                padding: 5.4rem 0 6rem;
+            }
             &::after{
                 position: absolute;
                 top: 0;
@@ -43,14 +59,20 @@
                 height: 100%;
                 content: '';
                 background-color: #F5F5F5;
+                @include mobile{
+                    width: 100vw;
+                    right: -2rem;
+                }
             }
         }
 
     }
 
     &__right{
-        width: 50%;
         position: relative;
+        @include pc{
+            width: 50%;
+        }
 
         &::after{
             position: absolute;
@@ -62,17 +84,29 @@
             height: 100%;
             content: '';
             background-color: $bg-blue;
+            @include mobile{
+                width: 100vw;
+                left: -2rem;
+            }
         }
 
         &-fig{
             padding-top: 14rem;
+            @include mobile{
+                padding-top: 5.5rem;
+            }
             picture{
                 display: block;
                 padding-left: percentage(76px/720px);
                 padding-right: percentage(25px/720px);
+
+                @include mobile{
+                    padding: 0 2.34rem;
+                }
                 img{
                     width: 100%;
                     height: auto;
+                    vertical-align: bottom;
                 }
             }
         }
@@ -84,11 +118,19 @@
         position: relative;
 
         &-ttl{
-            padding-top: 5rem;
-            padding-left: percentage(180px/ 600px);
+            @include pc{
+                padding-top: 5rem;
+                padding-left: percentage(180px/ 600px);
+            }
+            @include mobile{
+                padding-top: 2.5rem ;
+            }
 
             &--main{
-               font-size: 4.8rem;     
+               font-size: 4.8rem;
+               @include mobile{
+                font-size: 3.6rem;
+               } 
             }
             &--sub{
                 font-size: 1.2rem;
@@ -99,23 +141,41 @@
                     top: initial;
                     bottom: -3rem;
                     width: 4rem;
+                    @include mobile{
+                        bottom: -2.8rem;
+                    }
                 }
             }
         }
         &-txt{
-            padding-left: percentage(180px/ 600px);
-            padding-top: 7.1rem;
             font-size: 1.4rem;
+            @include pc{
+                padding-top: 7.1rem;
+                padding-left: percentage(180px/ 600px);
+            }
+            @include mobile{
+                padding-top: 5.6rem;
+                line-height: 1.857;
+                padding-bottom: 6rem;
+            }
         }
         &-img{
             margin-top: 6.8rem;
             display: block;
-            position: absolute;
-            right: -4rem;
-            padding-left: percentage(120px / 720px);
+            @include pc{
+                padding-left: percentage(120px / 720px);
+                position: absolute;
+                right: -4rem;
+            }
+            @include mobile{
+                width: 100vw;
+                position: relative;
+                margin-left: -2rem;
+            }
             img{
                 width: 100%;
                 height: auto;
+                vertical-align: bottom;
             }
         }
     }

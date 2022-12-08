@@ -1,12 +1,21 @@
 .p-header{
+    @include mobile{
+        height: 6rem;
+        background-color: #fff;
+    }
 
     &__logo{
         font-size: 2.2rem;
         font-weight: 400;
         font-style: normal;
-        padding-left: 3.6rem;
-        padding-top: 2.4rem;
         line-height: 1;
+        @include pc{
+            padding-left: 3.6rem;
+            padding-top: 2.4rem;
+        }
+        @include mobile{
+            font-size: 1.5rem;
+        }
     }
 
     &__info{
@@ -17,6 +26,9 @@
 
     &__tel{
         margin-right: vw-calc(30);
+        @include mobile{
+            margin-right: 1.9rem;
+        }
 
         &-num{
             display: flex;
@@ -44,9 +56,22 @@
             font-size: vw-calc(11);
             font-family: $hiragino;
         }
+
+        &-icon{
+            padding-top: .3rem;
+            width: 1.6rem;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 
     &__contact{
+        @include mobile{
+            margin-right: 1.9rem;
+        }
+
         &-btn{
         width: vw-calc(200);
         margin-right: vw-calc(20);
@@ -54,7 +79,14 @@
         font-size: vw-calc(14);
         font-weight: bold;
         height: vw-calc(48);
-        
+        }
+
+        &-icon{
+            width: 2.1rem;
+            img{
+                width: 100%;
+                height: auto;
+            }
         }
     }
 
@@ -62,6 +94,13 @@
         position: relative;
         height: 10rem;
         width: 10rem;
+
+        @include mobile{
+            height: 6rem;
+            width: 6rem;
+            background-color: #000;
+            color: $white;
+        }
 
         .is-in &{
             height: 8.8rem;
@@ -74,28 +113,34 @@
             transform: translateX(-50%);
         }
 
-
         span{
             left: 50%;
             transform: translate(-50%);
     
             &:nth-of-type(1){
-                bottom: 4.3rem;
-                .is-in &{
-                    bottom: 3.7rem;
+                @include pc{
+                    bottom: 4.3rem;
+                    .is-in &{
+                        bottom: 3.7rem;
+                    }
+                }
+                @include mobile{
+                    bottom: 2rem;
                 }
             }
             &:nth-of-type(2){
-                bottom: 3.6rem;
-                .is-in &{
-                    bottom: 3rem;
+                @include pc{
+                    bottom: 3.6rem;
+                    .is-in &{
+                        bottom: 3rem;
+                    }
+                }
+                @include mobile{
+                    bottom: 2.5rem;
                 }
             }
         }
-    
-    } 
-    
-    
+    }     
 }
 
 

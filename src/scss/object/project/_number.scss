@@ -1,15 +1,25 @@
 .p-number{
-    display: flex;
     align-items: center;
+    @include pc{
+        display: flex;
+    }
+    @include mobile{
+        padding-top: 4.9rem;
+        padding-bottom: 7rem;
+    }
 
     &__graph{
-        width: 50%;
         position: relative;
+
+        @include pc{
+            width: 50%;
+        }
+
         img{
             width: 100%;
             height: auto;
+            vertical-align: bottom;
         }
-
 
         &-ttl{
             position: absolute;
@@ -17,19 +27,30 @@
             left: 0;
             padding-top: vw-calc(35);
             width: percentage(376px/600px);
+            @include mobile{
+                padding-top: 2rem;
+                width: 21.6rem;
+            }
         }
         &-fig{
-            padding-right: percentage(30px/600px);
             picture{
                 display: block;
             }
-
+            @include pc{
+                padding-right: percentage(30px/600px);
+            }
         }
 
     }
 
     &__paragraph{
-        width: 50%;
-        padding-left: percentage(120px/1200px);
+        @include pc{
+            padding-left: percentage(120px/1200px);
+            width: 50%;
+        }
+        @include mobile{
+            padding-top: 6.1rem;
+        }
+
     }
 }

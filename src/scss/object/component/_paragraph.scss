@@ -9,6 +9,10 @@
             font-weight: 500;
             font-style: normal;
             color: $blue;
+            @include mobile{
+                font-size: 2.4rem;
+                padding-top: 4.9rem;
+            }
         }
 
         &--small{
@@ -17,11 +21,20 @@
             font-weight: 500;
             font-style: normal;
             color: $blue;
+            @include mobile{
+                .p-product &{
+                    font-size: 2.1rem;
+                }
+            }
          }
     }
 
     &__text{
         line-height: $small;
         padding-top: 4.1rem;
+        @include mobile{
+            padding-top: 3rem;
+            letter-spacing: .025em;
+        }
     }
 }

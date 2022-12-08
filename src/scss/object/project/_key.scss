@@ -1,9 +1,14 @@
 .p-key{
     background-color: #222222;
     position: relative;
+    @include mobile{
+        margin-top: 6rem;
+    }
 
     &__bg{
-        padding-right: percentage(440px / 1440px);
+        @include pc{
+            padding-right: percentage(440px / 1440px);
+        }
         img{
             width: 100%;
             height: auto;
@@ -12,20 +17,28 @@
     }
 
     &__inner{
-        background: rgba($color: #000000, $alpha: .5);
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 50%;
+        @include pc{
+            background: rgba($color: #000000, $alpha: .5);
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50%;
+        }
     }
 
     &__textarea{
         color: #fff;
-        width: percentage(563px / 720px);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        @include pc{
+            width: percentage(563px / 720px);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include mobile{
+            aspect-ratio: 375 / 294;
+            padding: 0 2rem;
+        }
     }
 
     &__title{
@@ -34,10 +47,19 @@
         margin-top: vw-calc(244);
         letter-spacing: .1em;
         line-height: 1.384;
+        @include mobile{
+            display: none;
+        }
     }
 
     &__logo{
-        margin-top: vw-calc(55 );
+        @include pc{
+            margin-top: vw-calc(55);
+        }
+        @include mobile{
+            position: relative;
+            top: -3.1rem;
+        }
         img{
             width: 100%;
             height: auto;
@@ -46,25 +68,44 @@
 
     &__subtitle{
         &-ja{
-            font-size: vw-calc(38);
-            margin-top: vw-calc(59);
             line-height: 0.974;
+            @include pc{
+                font-size: vw-calc(38);
+                margin-top: vw-calc(59);
+            }
+            @include mobile{
+                font-size: 2.5rem;
+                letter-spacing: .141em;
+            }
         }
 
         &-en{
             font-family: $lato;
-            font-size: vw-calc(18);
-            letter-spacing: .215em;
-            margin-top: vw-calc(20);
             line-height: 2.333;
             font-weight: 300;
+            letter-spacing: .215em;
+            @include pc{
+                font-size: vw-calc(18);
+                margin-top: vw-calc(20);    
+            }
+            @include mobile{
+                font-size: 1.2rem;
+                padding-top: 1rem;
+            }
         }
     }
 
     &__text{
-        font-size: vw-calc(16);
-        margin-top: vw-calc(39);
-        font-weight: bold ;
+        @include pc{
+            margin-top: vw-calc(39);
+            font-weight: bold;
+            font-size: vw-calc(16);
+        }
+
+        @include mobile{
+            font-size: 1.4rem;
+            padding-top: 1.6rem;
+        }
     }
 
     &__scroll{
@@ -80,6 +121,10 @@
         letter-spacing: .025em;
         display: flex;
         justify-content: end;
+
+        @include mobile{
+            display: none;
+        }
 
         &-line{
             width: 1rem;

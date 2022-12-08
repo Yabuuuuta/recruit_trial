@@ -7,6 +7,9 @@
         line-height: 1;
         font-weight: 400;
         letter-spacing: .05em;
+        @include mobile{
+            font-size: 4.2rem;
+        }
     }
 
     &__sub{
@@ -16,6 +19,10 @@
         position: relative;
         margin-top: 1.7rem;
 
+        @include mobile{
+            margin-top: 1.1rem;
+        }
+
         &::before{
             content: '';
             display: inline-block;
@@ -24,6 +31,9 @@
             left: -4rem;
             width: 20px;
             height: 1px;
+            @include mobile{
+                left: -4.2rem;
+            }
         }
     }
 }

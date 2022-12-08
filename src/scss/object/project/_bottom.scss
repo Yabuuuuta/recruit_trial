@@ -1,5 +1,10 @@
 .p-bottom-img{
     margin-top: 14.4rem;
+
+    @include mobile{
+        margin-top: 6.7rem;
+    }
+
     img{
         width: 100%;
         height: auto;
