@@ -1,11 +1,15 @@
 .p-number{
-    align-items: center;
-    @include pc{
-        display: flex;
-    }
-    @include mobile{
-        padding-top: 4.9rem;
-        padding-bottom: 7rem;
+
+    &__inner{
+        align-items: center;
+        @include pc{
+            display: flex;
+            padding: 12.5rem 4rem 15rem;
+        }
+        @include mobile{
+            padding-top: 4.9rem;
+            padding-bottom: 7rem;
+        }
     }
 
     &__graph{
@@ -40,17 +44,17 @@
                 padding-right: percentage(30px/600px);
             }
         }
-
     }
 
     &__paragraph{
         @include pc{
+            padding-top: 8rem;
             padding-left: percentage(120px/1200px);
             width: 50%;
+
         }
         @include mobile{
             padding-top: 6.1rem;
         }
-
     }
 }

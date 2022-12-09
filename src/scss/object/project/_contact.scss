@@ -15,7 +15,6 @@
             padding-top: 5.6rem;
             padding-bottom: 6.1rem;
         }
-
     }
 
     &__title{
@@ -40,7 +39,7 @@
             height: 6.1rem;
             img{
                 width: 100%;
-                height: auto;
+                height: 100%;
             }
             @include mobile{
                 height: 5.1rem;

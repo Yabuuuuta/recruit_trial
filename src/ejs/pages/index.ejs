@@ -93,17 +93,17 @@ const img_path = assetsRelative() + 'img';
 <!-- menu -->
 <%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
 
-<section class="l-main">
+<section class="p-about l-main">
   <%- include(INCLUDE_PATH + 'object/project/_about'); _%>
 </section> 
-<section class="l-main">
+<section class="p-number l-main">
   <%- include(INCLUDE_PATH + 'object/project/_number'); _%>
 </section> 
 <section class="p-product l-main">
   <%- include(INCLUDE_PATH + 'object/project/_product'); _%>
 </section>
 
-<div class="p-bottom-img">
+<div class="p-bottom">
   <picture>
       <source srcset="assets/img/pic_product_bottom_sp.jpg" media="(max-width: 768px)" width="375" height="250">
       <img src="assets/img/pic_product_bottom.jpg" alt="" width="1440" height="480">

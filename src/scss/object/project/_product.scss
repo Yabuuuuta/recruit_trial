@@ -16,6 +16,15 @@
         }
     }
 
+    &__inner{
+        @include pc{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        @include mobile{
+            padding: 0 2rem;
+        }
+    }
 
     &__ttl{
         padding-top: 14.6rem;
@@ -26,9 +35,6 @@
             padding-left: 1rem;
         }
 
-        &-main{
-
-        }
         &-sub{
             color: rgba(255,255,255,.5);
             &::before{
@@ -64,12 +70,10 @@
                 'item1 item1'
                 'item3 item4'
             ;
-            grid-template-rows: 1fr 1fr;
         }
 
         @include mobile{
             padding-top: 3.9rem;
         }
     }
-
 }

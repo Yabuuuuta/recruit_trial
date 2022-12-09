@@ -9,19 +9,8 @@
 
     a{
         text-decoration: none;
-        color: #fff;
+        // color: #fff;
         display: inline-block;
-
-        .is-in &{
-            color: #000;
-        }
-
-        @include mobile{
-            &:not(.p-menu_logo) &{
-            color: #000;
-            }
-
-        }
     }
 
 }

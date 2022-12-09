@@ -1,9 +1,12 @@
 .p-about{
-    padding-top: 0;
-    padding-bottom: 0;
 
-    @include pc{
-        display: flex;
+    &__inner{
+        padding-top: 0;
+        padding-bottom: 0;
+    
+        @include pc{
+            display: flex;
+        }
     }
 
     &__ttl{
@@ -35,17 +38,17 @@
 
         &-first{
             @include pc{
-                padding-bottom:12.7rem;
-                padding-right: percentage(120px / 680px);
+                padding-bottom: 15.5rem;
+                padding-right: percentage(120px / 600px);
             }
             @include mobile{
-                padding-bottom: 7rem;
+                padding-bottom: 6.5rem;
             }
 
         }
         &-second{
             position: relative;
-            padding: 11.8rem percentage(120px / 680px) 14.7rem 0;
+            padding: 11.8rem percentage(120px / 600px) 14.7rem 0;
             @include mobile{
                 padding: 5.4rem 0 6rem;
             }
@@ -65,7 +68,6 @@
                 }
             }
         }
-
     }
 
     &__right{
@@ -110,7 +112,6 @@
                 }
             }
         }
-
     }
 
     &__alo{
@@ -150,7 +151,7 @@
         &-txt{
             font-size: 1.4rem;
             @include pc{
-                padding-top: 7.1rem;
+                padding-top: 6rem;
                 padding-left: percentage(180px/ 600px);
             }
             @include mobile{
@@ -160,12 +161,14 @@
             }
         }
         &-img{
-            margin-top: 6.8rem;
             display: block;
             @include pc{
-                padding-left: percentage(120px / 720px);
+                margin-top: 6.2rem;
+                width: vw-calc(720);
+                max-width: 72rem;
+                padding-left: percentage(120px / 600px);
                 position: absolute;
-                right: -4rem;
+                left: 0;
             }
             @include mobile{
                 width: 100vw;
