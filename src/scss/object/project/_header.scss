@@ -20,6 +20,10 @@
         a{
             @include pc{
                 color: #fff;
+
+                .is-in &{
+                    color: #000;
+                }
             }
             @include mobile{
                 color: #000;
@@ -88,6 +92,25 @@
         font-size: vw-calc(14);
         font-weight: bold;
         height: vw-calc(48);
+
+        .is-in &{
+            border: 1px solid #000;
+        }
+
+        @include pc{
+
+            &:hover{
+                background-color: #fff;
+                color: #000;
+
+                .is-in &{
+                    background-color: #000;
+                    color: #fff;
+
+                }
+            }
+        }
+
         }
 
         &-icon{
@@ -104,6 +127,12 @@
         height: 10rem;
         width: 10rem;
 
+        @include pc{
+            .is-in &{
+                height: 8.8rem;
+                width: 8.8rem;
+            }
+        }
         @include mobile{
             height: 6rem;
             width: 6rem;
@@ -111,15 +140,11 @@
             color: $white;
         }
 
-        .is-in &{
-            height: 8.8rem;
-            width: 8.8rem;
-        }
-
         &-title{
             bottom: 46%;
             left: 50%;
             transform: translateX(-50%);
+
         }
 
         span{
@@ -132,7 +157,11 @@
                     .is-in &{
                         bottom: 3.7rem;
                     }
+                    .hov-active &{
+                        bottom: 0;
+                    }    
                 }
+
                 @include mobile{
                     bottom: 2rem;
                 }

@@ -3,13 +3,13 @@ $prefix: 'u-hov';
 .#{$prefix}{
     
     @media (hover: hover){
-        &:not(.is-in) &{
+        transition: 0.3s opacity;
+        &:hover{
+            opacity: 0.7;
             transition: 0.3s opacity;
-            &:hover{
-                opacity: 0.7;
-                transition: 0.3s opacity;
-                cursor: pointer;
-            }
+            cursor: pointer;
+            
         }
+
     }
 }

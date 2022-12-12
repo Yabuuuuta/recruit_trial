@@ -72,6 +72,10 @@ const img_path = assetsRelative() + 'img';
     })(document);
   </script>
 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
   <!-- local CSS -->
   <%- include(INCLUDE_PATH + 'foundation/_styles', { css_path: assetsRelative() + 'css' }); -%>
 
@@ -85,13 +89,14 @@ const img_path = assetsRelative() + 'img';
 <!-- header -->
 <header class="l-header">
   <%- include(INCLUDE_PATH + 'object/project/_header'); _%>
+
+  <%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
+
 </header>
 
 <main>
 <%- include(INCLUDE_PATH + 'object/project/_key'); _%>
 
-<!-- menu -->
-<%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
 
 <section class="p-about l-main">
   <%- include(INCLUDE_PATH + 'object/project/_about'); _%>
@@ -126,6 +131,7 @@ const img_path = assetsRelative() + 'img';
 
 <!-- local JS -->
 <%- include(INCLUDE_PATH + 'foundation/_scripts.ejs', { js_path: assetsRelative() + 'js' }); -%>
+
 
 </body>
 </html>

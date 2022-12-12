@@ -23,3 +23,12 @@ keyframs
         top: 100%;
     }
 }
+
+@keyframes makeCircle {
+    0% {
+        stroke-dasharray: 0 366;
+    }
+    99.9%,to {
+        stroke-dasharray: 366 366;
+    }
+}

@@ -1,4 +1,5 @@
 import { debounce } from 'lodash-es';
+import baseNth from 'lodash-es/_baseNth';
 import Stats from 'stats-js';
 
 import EVENTS from '~/constants/event-names';
@@ -37,5 +38,82 @@ import EVENTS from '~/constants/event-names';
   }
   window.addEventListener(EVENTS.LOAD, onLoad);
 })();
+
+
+
+
+$(function() {
+
+  // menu fix ===================================
+  let keyHeight = $('.p-key').height();
+
+  function FixedAnime(){
+    let scrollHeight = $(window).scrollTop();
+
+    if (scrollHeight >= keyHeight){
+      $('body').addClass('is-in');
+    } else {
+      $('body').removeClass('is-in');
+    }
+  };
+
+  $(window).scroll(function() {
+    FixedAnime();
+  });
+
+  // burger btn ===================================
+  const bgrBtn = $('.p-header__bgr');
+
+  // hover----
+  bgrBtn.hover(
+    function(){
+      $('.p-header__bgr-title').fadeOut();
+      $(this).addClass('hov-active');
+    },
+    function(){
+      $('.p-header__bgr-title').fadeIn();
+      $(this).removeClass('hov-active');
+    }
+  );
+
+    // menu----
+    const menu = $('.p-menu');
+    const menuClose = $('.js-menu-close');
+
+    menu.hide();
+    bgrBtn.on('click', function(){
+      menu.fadeIn(200);
+    });
+
+    menuClose.on('click', function(){
+      menu.fadeOut(200);
+    });
+
+  // go pagetop btn ===============================
+
+  const goTop = $('.js-gotop');
+
+  goTop.on('click', function(){
+    $('body, html').animate({
+      scrollTop: 0
+    }, 600);
+    return false;
+  });
+});
+
+
+  // slide up ===============================
+const slideUp = $('.slide-up');
+$(window).on('load scroll', function() {
+  slideUp.each(function() {
+    let target = $(this).offset().top;
+		let scroll = $(window).scrollTop();
+		let height = $(window).height();
+		if (scroll > target - height){
+			$(this).addClass('active');
+		};
+
+  });
+});
 
 
