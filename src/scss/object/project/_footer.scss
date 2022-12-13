@@ -1,14 +1,11 @@
 .p-footer{
+    height: 100%;
     color: $white;
-    height: 12rem;
     background-color: $bg-black;
     @include pc{
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-    @include mobile{
-        height: 20.5rem;
     }
 
     &__inner{

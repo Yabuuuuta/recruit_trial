@@ -2,18 +2,18 @@
 </div>
 
 <div class="p-product__inner l-main__inner">
-    <div class="p-product__ttl c-main-ttl">
+    <div class="p-product__ttl c-main-ttl slide-up">
         <h2 class="p-product__ttl-main c-main-ttl__main">PRODUCT</h2>
         <p class="p-product__ttl-sub c-main-ttl__sub">PRODUCT INFORMATION</p>
     </div>
-    <div class="p-product__paragraph c-paragraph">
+    <div class="p-product__paragraph c-paragraph slide-up">
         <p class="p-product__paragraph-head c-paragraph__head--small">この文章はダミーです。</p>
         <p class="p-product__paragraph-txt c-paragraph__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
     </div>
 
     <div class="p-product__list">
         <% for (var i = 0; i < 4; i++) { %>
-        <div class="p-product__list-item c-product-card">
+        <div class="p-product__list-item c-product-card slide-up">
             <div class="c-product-card__img">
                 <picture>
                     <source srcset="assets/img/pic_product0<%= i+1 %>_sp.jpg" media="(max-width: 767px)" width="335" height="223">
@@ -25,8 +25,8 @@
                 <div class="c-product-card__head-btn">
                     <p class="c-product-card__head-btn-ttl sp-hide">VIEW MORE</p>
                     <div class="c-product-card__head-btn-circle">
-                        <svg>
-                            <circle cx="31" cy="31" r="30"></circle>
+                        <svg viewBox="0 0 62 62">
+                            <circle cx="31" cy="31" r="31"></circle>
                         </svg>
                     </div>
                     <!-- <span class="c-product-card__head-btn-more"></span> -->

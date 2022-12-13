@@ -1,4 +1,5 @@
 .c-product-card{
+    cursor: pointer;
     padding-top: 6rem;
     &:nth-of-type(1){
         padding-top: 0;
@@ -19,9 +20,11 @@
             height: auto;
             transition: transform .4s;
 
-            &:hover{
-                transform: scale(1.05);
-                transition: transform .4s;
+            .hov-active &{
+                @media (hover: hover) {
+                    transform: scale(1.05);
+                    transition: transform .4s;
+                }
             }
         }
     }
@@ -55,12 +58,35 @@
                 width: 6.2rem;
                 height: 6.2rem;
                 position: relative;
-                border: 1px solid rgba(0,0,0,.1);
-                border-radius: 50%;
-                transform: rotate(-90deg);
                 @include mobile{
                     width: 5.1rem;
                     height: 5.1rem;
+                }
+
+                svg{
+                    width: 6.2rem;
+                    height: 6.2rem;
+                    transform: rotate(-90deg);
+                    border: 1px solid rgba(0,0,0,.1);
+                    border-radius: 50%;
+
+                    @include mobile{
+                        width: 5.1rem;
+                        height: 5.1rem;    
+                    }
+                }
+
+                circle{
+                    fill: transparent;
+                    .hov-active &{
+                        @media (hover: hover) {
+
+                        stroke: rgba(88,126,81,.5);
+                        stroke-width: 2px;
+                        stroke-dasharray: 0 377;
+                        animation: makeCircle 1s ease 0s 1 forwards;
+                        }
+                    }
                 }
 
                 &::before{
@@ -85,17 +111,6 @@
                     left: 50%;
                     transform: translate(-50%, -50%);
                 }
-                circle{
-                    fill: transparent;
-    
-                    &:hover{
-                        stroke: rgba(88,126,81,.5);
-                        stroke-width: 1px;
-                        animation: makeCircle 2s 1 3s;
-    
-                    }
-                }
-    
             }
         }
     }

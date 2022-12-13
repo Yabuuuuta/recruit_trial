@@ -1,14 +1,14 @@
-$prefix: 'slide-up';
+$prefix: 'slide-left';
 
 .#{$prefix}{
     opacity: 0;
     visibility: hidden;
     transition: 1.3s;
-    transform: translateY(3rem);
+    transform: translateX(5rem);
 
     &.active{
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }

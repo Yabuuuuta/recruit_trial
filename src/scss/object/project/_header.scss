@@ -87,30 +87,32 @@
 
         &-btn{
         width: vw-calc(200);
-        margin-right: vw-calc(20);
         font-family: $hiragino;
         font-size: vw-calc(14);
         font-weight: bold;
         height: vw-calc(48);
 
-        .is-in &{
-            border: 1px solid #000;
-        }
+            .is-in &{
+                border: 1px solid #000;
+                margin-right: vw-calc(20);
+            }
 
-        @include pc{
+            @include pc{
+                transition: background-color .3s, color .3s;
 
-            &:hover{
-                background-color: #fff;
-                color: #000;
+                &:hover{
+                    transition: background-color .3s, color .3s;
+                    background-color: #fff;
+                    color: #000;
+                    cursor: pointer;
 
-                .is-in &{
-                    background-color: #000;
-                    color: #fff;
+                    .is-in &{
+                        background-color: #000;
+                        color: #fff;
 
+                    }
                 }
             }
-        }
-
         }
 
         &-icon{
@@ -128,9 +130,11 @@
         width: 10rem;
 
         @include pc{
+            margin: 0 1rem;
             .is-in &{
                 height: 8.8rem;
                 width: 8.8rem;
+                margin: 0;
             }
         }
         @include mobile{
@@ -144,28 +148,26 @@
             bottom: 46%;
             left: 50%;
             transform: translateX(-50%);
-
         }
 
         span{
             left: 50%;
-            transform: translate(-50%);
-    
+            transform: translateX(-50%);
+            transition: transform .3s;
+
             &:nth-of-type(1){
                 @include pc{
                     bottom: 4.3rem;
                     .is-in &{
                         bottom: 3.7rem;
                     }
-                    .hov-active &{
-                        bottom: 0;
-                    }    
                 }
 
                 @include mobile{
                     bottom: 2rem;
                 }
             }
+
             &:nth-of-type(2){
                 @include pc{
                     bottom: 3.6rem;

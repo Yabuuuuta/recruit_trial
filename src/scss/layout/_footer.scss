@@ -1,0 +1,6 @@
+.l-footer{
+    height: 12rem;
+    @include mobile{
+        height: 20.5rem;
+    }
+}

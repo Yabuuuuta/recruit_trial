@@ -44,7 +44,7 @@ import EVENTS from '~/constants/event-names';
 
 $(function() {
 
-  // menu fix ===================================
+  // header fix ===================================
   let keyHeight = $('.p-key').height();
 
   function FixedAnime(){
@@ -68,26 +68,27 @@ $(function() {
   bgrBtn.hover(
     function(){
       $('.p-header__bgr-title').fadeOut();
-      $(this).addClass('hov-active');
+      $('.p-header__bgr span').css('transform', 'translate(-50%, -1rem)');
     },
     function(){
       $('.p-header__bgr-title').fadeIn();
-      $(this).removeClass('hov-active');
+      $('.p-header__bgr span').css('transform', 'translate(-50%, 0)');
     }
   );
 
-    // menu----
-    const menu = $('.p-menu');
-    const menuClose = $('.js-menu-close');
+  // menu----
+  const menu = $('.p-menu');
+  const menuClose = $('.js-menu-close');
 
-    menu.hide();
-    bgrBtn.on('click', function(){
-      menu.fadeIn(200);
-    });
+  bgrBtn.on('click', function(){
+    menu.fadeIn(200);
+    $('body').css('position', 'fixed');
+  });
 
-    menuClose.on('click', function(){
-      menu.fadeOut(200);
-    });
+  menuClose.on('click', function(){
+    menu.fadeOut(200);
+    $('body').css('position', 'unset');
+  });
 
   // go pagetop btn ===============================
 
@@ -103,17 +104,48 @@ $(function() {
 
 
   // slide up ===============================
-const slideUp = $('.slide-up');
+
 $(window).on('load scroll', function() {
-  slideUp.each(function() {
+  const slideUp = $('.slide-up');
+
+  slideUp.each(function() { 
     let target = $(this).offset().top;
 		let scroll = $(window).scrollTop();
 		let height = $(window).height();
 		if (scroll > target - height){
 			$(this).addClass('active');
 		};
-
   });
 });
+
+
+  // slide left ===============================
+
+ $(window).on('load scroll', function() {
+  const slideLeft = $('.slide-left');
+
+  slideLeft.each(function() { 
+    let target = $(this).offset().top;
+		let scroll = $(window).scrollTop();
+		let height = $(window).height();
+		if (scroll > target - height){
+			$(this).addClass('active');
+		};
+  });
+});
+
+  // product view more btn ===============================
+
+  let productItem = $('.p-product__list-item');
+  productItem.hover(
+    function() {
+      $(this).addClass('hov-active');
+    },
+    function() {
+      $(this).removeClass('hov-active');
+    }
+  ) 
+  
+
 
 
