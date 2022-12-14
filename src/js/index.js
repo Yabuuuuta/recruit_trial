@@ -80,8 +80,14 @@ $(function() {
   const menu = $('.p-menu');
   const menuClose = $('.js-menu-close');
 
+  function disabledScroll(event) {
+    event.preventDefault();
+  };
+
   bgrBtn.on('click', function(){
     menu.fadeIn(200);
+    document.addEventListener('touchmove', disabledScroll);
+    document.addEventListener('mousewheel', disabledScroll);
   });
 
   menuClose.on('click', function(){
