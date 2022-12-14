@@ -1,6 +1,5 @@
 .p-about{
-    overflow: hidden;
-
+    
     &__inner{
         padding-top: 0;
         padding-bottom: 0;
@@ -83,7 +82,7 @@
             left: 0;
             z-index: $back;
             display: block;
-            width: 50vw;
+            width: calc(var(--vw) * 50);
             height: 100%;
             content: '';
             background-color: $bg-blue;

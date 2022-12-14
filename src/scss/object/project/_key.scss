@@ -70,6 +70,7 @@
     &__subtitle{
         &-ja{
             line-height: 0.974;
+            letter-spacing: .140em;
             @include pc{
                 font-size: vw-calc(38);
                 margin-top: vw-calc(59);

@@ -14,9 +14,9 @@
         width: 10rem;
         height: 10rem;
         top: 0;
-        right: 1rem;
 
         @include pc{
+            right: 1rem;
             .is-in &{
                 width: 8.8rem;
                 height: 8.8rem;
@@ -25,6 +25,7 @@
         @include mobile{
             width: 6rem;
             height: 6rem;
+            right: 0;
         }
 
         span{
@@ -38,7 +39,7 @@
             height: 0.1rem;
 
             @include mobile{
-                width: 2.6rem;
+                width: 2.3rem;
             }
 
             &:nth-of-type(2){
@@ -63,14 +64,15 @@
         @include pc{
             max-width: 960px;
             margin: 0 auto;
-            padding-top: 12rem;    
+            padding-top: 12rem;  
+            padding: 12rem 0 19.2rem;  
             display: grid;
             grid-template-areas: 
             'logo logo'
             'contact nav'
             'tel nav'
             ;
-            grid-template-columns: percentage(560/960) percentage(400/960);
+            grid-template-columns: percentage(540/960) percentage(420/960);
         }
     }
 
@@ -100,8 +102,9 @@
 
     &__contact{
         @include pc{
-            padding-top: 4.5rem;
+            padding-top: 5.5rem;
             grid-area: contact;
+            padding-left: 4rem;
         }
         @include mobile{
             padding-bottom: 3.1rem;
@@ -139,6 +142,7 @@
     &__tel{
         @include pc{
             padding-bottom: 4.5rem;
+            padding-left: 4rem;
             margin-top: 6.2rem;    
             grid-area: tel;
         }
@@ -165,6 +169,7 @@
             font-size: 1.3rem;
             @include pc{
                 padding-left: 8.8rem;
+                padding-top: .5rem;
             }
             @include mobile{
                 padding-top: .8rem;
@@ -176,7 +181,7 @@
         @include pc{
             border-left: 1px solid rgba(255,255,255,.1);
             grid-area: nav;
-            padding: 4.5rem 0 4.5rem 9.5rem;
+            padding: 4.5rem 0 4.5rem 10rem;
         }
         @include mobile{
             padding: 4.8rem 2rem 1.9rem;

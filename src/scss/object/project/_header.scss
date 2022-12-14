@@ -100,16 +100,18 @@
             @include pc{
                 transition: background-color .3s, color .3s;
 
-                &:hover{
-                    transition: background-color .3s, color .3s;
-                    background-color: #fff;
-                    color: #000;
-                    cursor: pointer;
-
-                    .is-in &{
-                        background-color: #000;
-                        color: #fff;
-
+                @media (hover: hover) {
+                    &:hover{
+                        transition: background-color .3s, color .3s;
+                        background-color: #fff;
+                        color: #000;
+                        cursor: pointer;
+    
+                        .is-in &{
+                            background-color: #000;
+                            color: #fff;
+    
+                        }
                     }
                 }
             }

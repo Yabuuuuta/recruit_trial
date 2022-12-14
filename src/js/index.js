@@ -44,7 +44,7 @@ import EVENTS from '~/constants/event-names';
 
 $(function() {
 
-  // header fix ===================================
+// header fix ===================================
   let keyHeight = $('.p-key').height();
 
   function FixedAnime(){
@@ -61,7 +61,7 @@ $(function() {
     FixedAnime();
   });
 
-  // burger btn ===================================
+// burger btn ===================================
   const bgrBtn = $('.p-header__bgr');
 
   // hover----
@@ -82,17 +82,15 @@ $(function() {
 
   bgrBtn.on('click', function(){
     menu.fadeIn(200);
-    $('body').css('position', 'fixed');
   });
 
   menuClose.on('click', function(){
     menu.fadeOut(200);
-    $('body').css('position', 'unset');
   });
 
-  // go pagetop btn ===============================
+// go pagetop btn ===============================
 
-  const goTop = $('.js-gotop');
+const goTop = $('.js-gotop');
 
   goTop.on('click', function(){
     $('body, html').animate({
@@ -103,7 +101,7 @@ $(function() {
 });
 
 
-  // slide up ===============================
+// slide up ===============================
 
 $(window).on('load scroll', function() {
   const slideUp = $('.slide-up');
@@ -119,7 +117,7 @@ $(window).on('load scroll', function() {
 });
 
 
-  // slide left ===============================
+// slide left ===============================
 
  $(window).on('load scroll', function() {
   const slideLeft = $('.slide-left');
@@ -134,7 +132,7 @@ $(window).on('load scroll', function() {
   });
 });
 
-  // product view more btn ===============================
+// product view more btn ===============================
 
   let productItem = $('.p-product__list-item');
   productItem.hover(
@@ -146,6 +144,17 @@ $(window).on('load scroll', function() {
     }
   ) 
   
+// set view width (except scrollbar) ===============================
+
+const setVw = function() {
+  const vw = document.documentElement.clientWidth / 100;
+  document.documentElement.style.setProperty('--vw', `${vw}px`);
+}
+window.addEventListener('DOMContentLoaded', setVw);
+window.addEventListener('resize', setVw);
+
+  
+
 
 
 
