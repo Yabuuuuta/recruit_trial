@@ -1,0 +1,14 @@
+.c-modal-switch{
+    max-width: 35rem;
+    gap: 1rem;
+    display: flex;
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    &__list{
+        list-style: none;
+    }
+}

@@ -13,7 +13,7 @@
 
     <div class="p-product__list">
         <% for (var i = 0; i < 4; i++) { %>
-        <div class="p-product__list-item c-product-card slide-up">
+        <div class="p-product__list-item c-product-card slide-up" data-slide="<%= i+1 %>">
             <div class="c-product-card__img">
                 <picture>
                     <source srcset="assets/img/pic_product0<%= i+1 %>_sp.jpg" media="(max-width: 767px)" width="335" height="223">

@@ -75,6 +75,12 @@ const img_path = assetsRelative() + 'img';
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+  <!-- swiper -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
   <!-- local CSS -->
   <%- include(INCLUDE_PATH + 'foundation/_styles', { css_path: assetsRelative() + 'css' }); -%>
@@ -86,7 +92,6 @@ const img_path = assetsRelative() + 'img';
 
 <%# start page content -%>
 
-<!-- header -->
 <header class="l-header">
   <%- include(INCLUDE_PATH + 'object/project/_header'); _%>
 
@@ -96,7 +101,6 @@ const img_path = assetsRelative() + 'img';
 
 <main>
 <%- include(INCLUDE_PATH + 'object/project/_key'); _%>
-
 
 <section class="p-about l-main">
   <%- include(INCLUDE_PATH + 'object/project/_about'); _%>
@@ -118,14 +122,16 @@ const img_path = assetsRelative() + 'img';
 <section>
   <%- include(INCLUDE_PATH + 'object/project/_contact'); _%>
 </section>
-
-
 </main>
 
-<!-- footer -->
 <footer class="l-footer">
   <%- include(INCLUDE_PATH + 'object/project/_footer'); _%>
 </footer>
+
+<div class="p-modal">
+  <%- include(INCLUDE_PATH + 'object/project/_modal'); _%>
+</div>
+
 
 <%# end page content -%>
 

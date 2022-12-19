@@ -1,0 +1,100 @@
+.p-modal{
+    display: none;
+
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $modal;
+    overflow-y: scroll;
+
+    &__inner{
+        max-width: 132rem;
+        margin: 0 auto;
+        padding: 15rem 0;
+        position: relative;
+        @include mobile{
+            padding: 6rem 0;
+        }
+    }
+
+    &__slide{
+         position: relative;
+    }
+
+    &__switch{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+    }
+
+    &__close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include pc{
+            width: 10rem;
+            height: 10rem;    
+        }
+        @include mobile{
+            width: 6rem;
+            height: 6rem;
+        }
+
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 3.5rem;
+            height: .1rem;
+            background-color: #fff;
+            @include mobile{
+                width: 2.5rem;
+            }
+            &:nth-of-type(1){
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+            &:nth-of-type(2){
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+    }
+
+    &__swipebtn{
+        &-next{
+            @include mobile{
+                top: unset;
+                bottom: -3.8rem;
+                right: 13rem;
+            }
+            &::after{
+                @include pc{
+                    color: #fff;
+                    font-size: 3rem;
+                }
+                @include mobile{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        &-prev{
+            @include mobile{
+                top: unset;
+                bottom: -3.8rem;
+                left: 13rem;
+            }
+            &::after{
+                @include pc{
+                    font-size: 3rem;
+                    color: #fff;
+                }
+                @include mobile{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
