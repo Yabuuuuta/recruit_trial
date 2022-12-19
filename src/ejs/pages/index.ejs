@@ -35,8 +35,6 @@ const img_path = assetsRelative() + 'img';
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
 
-  <link rel="shortcut icon" href="<%= img_path; %>/common/favicon.ico">
-
   <title><%= info[page_name].title; %></title>
 
   <meta name="description" content="<%= info[page_name].description; %>">
@@ -55,11 +53,9 @@ const img_path = assetsRelative() + 'img';
   <meta name="twitter:image" content="<%= info[page_name].ogp_image; %>" />
   <meta name="twitter:description" content="<%= info[page_name].description; %>" />
 
-  <!-- adobe font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
-
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    
   <!-- adobe font -->
   <script>
     (function(d) {
@@ -73,7 +69,7 @@ const img_path = assetsRelative() + 'img';
   </script>
 
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
   <!-- swiper -->
   <link

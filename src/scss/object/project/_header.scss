@@ -42,50 +42,50 @@
         @include mobile{
             margin-right: 1.9rem;
         }
+    }
 
-        &-num{
-            display: flex;
-            font-family: $lato;
-            align-items: center;
+    &__tel-num{
+        display: flex;
+        font-family: $lato;
+        align-items: center;
 
-            dt{
-                font-size: vw-calc(13);
-                margin-right: 10px;
-                letter-spacing: .2em;
-                border-bottom: 1px solid #fff;
-                line-height: 1.333;
-                padding-bottom: vw-calc(3);
-                .is-in &{
-                    border-color: #000;
-                }
-            }
-            dd{
-                font-size: vw-calc(24);
-                line-height: calc(32 / 24);
+        dt{
+            font-size: vw-calc(13);
+            margin-right: 10px;
+            letter-spacing: .2em;
+            border-bottom: 1px solid #fff;
+            line-height: 1.333;
+            padding-bottom: vw-calc(3);
+            .is-in &{
+                border-color: #000;
             }
         }
-
-        &-time{
-            font-size: vw-calc(11);
-            font-family: $hiragino;
-        }
-
-        &-icon{
-            padding-top: .3rem;
-            width: 1.6rem;
-            img{
-                width: 100%;
-                height: auto;
-            }
+        dd{
+            font-size: vw-calc(24);
+            line-height: calc(32 / 24);
         }
     }
+    &__tel-time{
+        font-size: vw-calc(11);
+        font-family: $hiragino;
+    }
+    &__tel-icon{
+        padding-top: .3rem;
+        width: 1.6rem;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
 
     &__contact{
         @include mobile{
             margin-right: 1.9rem;
         }
+    }
 
-        &-btn{
+    &__contact-btn{
         width: vw-calc(200);
         font-family: $hiragino;
         font-size: vw-calc(14);
@@ -98,11 +98,13 @@
             }
 
             @include pc{
-                transition: background-color .3s, color .3s;
+                transition-property: background-color, color;
+                transition-duration: .3s;
 
                 @media (hover: hover) {
                     &:hover{
-                        transition: background-color .3s, color .3s;
+                        transition-property: background-color, color;
+                        transition-duration: .3s;
                         background-color: #fff;
                         color: #000;
                         cursor: pointer;
@@ -117,14 +119,14 @@
             }
         }
 
-        &-icon{
-            width: 2.1rem;
-            img{
-                width: 100%;
-                height: auto;
-            }
+    &__contact-icon{
+        width: 2.1rem;
+        img{
+            width: 100%;
+            height: auto;
         }
     }
+
 
     &__bgr{
         position: relative;
@@ -146,16 +148,11 @@
             color: $white;
         }
 
-        &-title{
-            bottom: 46%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
         span{
             left: 50%;
             transform: translateX(-50%);
-            transition: transform .3s;
+            transition-property: transform;
+            transition-duration: .3s;
 
             &:nth-of-type(1){
                 @include pc{
@@ -182,7 +179,13 @@
                 }
             }
         }
-    }     
+    }
+    
+    &__bgr-title{
+        bottom: 46%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 

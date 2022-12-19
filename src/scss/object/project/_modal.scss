@@ -12,11 +12,13 @@
 
     &__inner{
         max-width: 132rem;
-        margin: 0 auto;
-        padding: 15rem 0;
         position: relative;
+        @include pc{
+            margin: 0 auto;
+            padding: 15rem 0;
+        }
         @include mobile{
-            padding: 6rem 0;
+            padding: 6rem 0 10rem;
         }
     }
 
@@ -63,38 +65,38 @@
         }
     }
 
-    &__swipebtn{
-        &-next{
-            @include mobile{
-                top: unset;
-                bottom: -3.8rem;
-                right: 13rem;
-            }
-            &::after{
-                @include pc{
-                    color: #fff;
-                    font-size: 3rem;
-                }
-                @include mobile{
-                    font-size: 1.2rem;
-                }
-            }
+    &__swipebtn-next{
+        @include mobile{
+            top: unset;
+            bottom: -3.8rem;
+            right: 13rem;
         }
-        &-prev{
-            @include mobile{
-                top: unset;
-                bottom: -3.8rem;
-                left: 13rem;
+        &::after{
+            @include pc{
+                color: #fff;
+                font-size: 3rem;
             }
-            &::after{
-                @include pc{
-                    font-size: 3rem;
-                    color: #fff;
-                }
-                @include mobile{
-                    font-size: 1.2rem;
-                }
+            @include mobile{
+                font-size: 1.2rem;
             }
         }
     }
+    
+    &__swipebtn-prev{
+        @include mobile{
+            top: unset;
+            bottom: -3.8rem;
+            left: 13rem;
+        }
+        &::after{
+            @include pc{
+                font-size: 3rem;
+                color: #fff;
+            }
+            @include mobile{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
 }

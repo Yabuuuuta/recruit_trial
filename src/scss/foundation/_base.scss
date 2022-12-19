@@ -26,11 +26,11 @@ html{
 body{
     width: inherit;
     height: inherit;
-    font-family: noto-sans-cjk-jp, sans-serif;
+    font-family: $notosans;
     font-style: normal;
     font-weight: 400;
     color: $black;
-    line-height: $small;
+    line-height: $lh-small;
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -2,7 +2,8 @@
 
     &__inner{
         display: flex;
-        transition: .2s;
+        transition-property: transform;
+        transition-duration: 0,2s;
         position: absolute;
         top: 0;
         left: 0;

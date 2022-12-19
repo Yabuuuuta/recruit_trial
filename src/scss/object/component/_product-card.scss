@@ -12,22 +12,26 @@
     @include mobile{
         padding-top: 4rem;
     }
+
     &__img{
         overflow: hidden;
         img{
             vertical-align: bottom;
             width: 100%;
             height: auto;
-            transition: transform .4s;
+            transition-property: transform;
+            transition-duration: .4s;
 
             .hov-active &{
                 @media (hover: hover) {
                     transform: scale(1.05);
-                    transition: transform .4s;
+                    transition-property: transform;
+                    transition-duration: .4s;
                 }
             }
         }
     }
+
     &__head{
         padding-top: 2rem;
         letter-spacing: .025em;
@@ -39,81 +43,83 @@
             padding-top: 1rem;
         }
 
-        &-ttl{
-            font-weight: 700;
-            font-size: 1.6rem;
+    }
+
+    &__head-ttl{
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+
+    &__head-btn{
+        font-size: 1rem;
+        font-family: $lato;
+        display: flex;
+        align-items: center;
+    }
+
+    &__head-btn-ttl{
+        padding-right: 2.1rem;
+    }
+
+    &__head-btn-circle{
+        width: 6.2rem;
+        height: 6.2rem;
+        position: relative;
+        @include mobile{
+            width: 5.1rem;
+            height: 5.1rem;
         }
-        
-        &-btn{
-            font-size: 1rem;
-            font-family: $lato;
-            display: flex;
-            align-items: center;
 
-            &-ttl{
-                padding-right: 2.1rem;
+        svg{
+            width: 6.2rem;
+            height: 6.2rem;
+            transform: rotate(-90deg);
+            border: 1px solid rgba(0,0,0,.1);
+            border-radius: 50%;
+
+            @include mobile{
+                width: 5.1rem;
+                height: 5.1rem;    
             }
+        }
 
-            &-circle{
-                width: 6.2rem;
-                height: 6.2rem;
-                position: relative;
-                @include mobile{
-                    width: 5.1rem;
-                    height: 5.1rem;
-                }
+        circle{
+            fill: transparent;
+            .hov-active &{
+                @media (hover: hover) {
 
-                svg{
-                    width: 6.2rem;
-                    height: 6.2rem;
-                    transform: rotate(-90deg);
-                    border: 1px solid rgba(0,0,0,.1);
-                    border-radius: 50%;
-
-                    @include mobile{
-                        width: 5.1rem;
-                        height: 5.1rem;    
-                    }
-                }
-
-                circle{
-                    fill: transparent;
-                    .hov-active &{
-                        @media (hover: hover) {
-
-                        stroke: rgba(88,126,81,.5);
-                        stroke-width: 2px;
-                        stroke-dasharray: 0 377;
-                        animation: makeCircle 1s ease 0s 1 forwards;
-                        }
-                    }
-                }
-
-                &::before{
-                    content: "";
-                    width: 1.5rem;
-                    height: 0.1rem;
-                    background-color: $bg-black;
-                    display: inline-block;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(90deg);
-                }
-                &::after{
-                    content: "";
-                    width: 1.5rem;
-                    height: 0.1rem;
-                    background-color: $bg-black;
-                    display: inline-block;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                stroke: rgba(88,126,81,.5);
+                stroke-width: 2px;
+                stroke-dasharray: 0 377;
+                animation: makeCircle 1s ease 0s 1 forwards;
                 }
             }
+        }
+
+        &::before{
+            content: "";
+            width: 1.5rem;
+            height: 0.1rem;
+            background-color: $bg-black;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        &::after{
+            content: "";
+            width: 1.5rem;
+            height: 0.1rem;
+            background-color: $bg-black;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
+
     &__txt{
         font-size: 1.3rem;
         padding-top: 1.5rem;

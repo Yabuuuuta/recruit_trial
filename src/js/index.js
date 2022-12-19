@@ -110,39 +110,46 @@ const goTop = $('.js-gotop');
 
 // product view more btn ===============================
 
-  let productItem = $('.p-product__list-item');
+let productItem = $('.p-product__list-item');
 
-  // btn
-  productItem.hover(
-    function() {
-      $(this).addClass('hov-active');
-    },
-    function() {
-      $(this).removeClass('hov-active');
-    }
-  ) 
+// btn
+productItem.hover(
+  function() {
+    $(this).addClass('hov-active');
+  },
+  function() {
+    $(this).removeClass('hov-active');
+  }
+) 
 
 // product modal ===============================
 
-  let openModal = $('.p-product__list-item');
-  let closeModal1 = $('.p-modal__close');
-  let closeModal2 = $('.p-modal__inner');
-  let modal = $('.p-modal');
+let openModal = $('.p-product__list-item');
+let closeModal = $('.p-modal__close');
+let modal = $('.p-modal');
+let preventList = $('.p-modal__wrapper, .p-modal__swipebtn-prev, .p-modal__swipebtn-next, .c-modal-slide__switch-wrap');
 
-  openModal.on('click', function(){
-    modal.fadeIn(300);
-  });
+openModal.on('click', function(){
+  modal.fadeIn(300);
+});
 
-  closeModal1.on('click', function(){
-    modal.fadeOut(300);
-  });
+closeModal.on('click', function(){
+  modal.fadeOut(300);
+});
 
-  $('.p-modal__wrapper, .p-modal__swipebtn-prev, .p-modal__swipebtn-next, .c-modal-slide__switch-wrap').on('click', function(event){
-    closeModal2.on('click',function(){
-      event.stopPropagation();
-    });
-  });
+preventList.on('click', function(event){
+  event.stopPropagation();
+}); 
 
+modal.on('click',function(){
+  modal.fadeOut(300);
+});  
+
+  // クリックしたスライドno.を取得
+$('.p-product__list-item').on('click',function(){
+  let slideNo = $(this).data('slide');
+  swiper.slideTo(slideNo, 0);
+});
 
 
 // slide up ===============================
@@ -197,18 +204,8 @@ var sliderThumbnail = new Swiper('.slider-thumbnail', {
   watchSlidesProgress: true,
 });
 
-
-$('.p-product__list-item').on('click',function(){
-  let slideNo = $(this).data('slide');
-});
-
-
 //スライダー
 const swiper = new Swiper(".swiper", {  
-  
-  //開始位置の指定
-  // initialSlide: slideNo,
-
   loop: true,
   // ページネーション
   pagination: {
@@ -225,6 +222,9 @@ const swiper = new Swiper(".swiper", {
     swiper: sliderThumbnail
   }
 });
+
+
+
 
 
   

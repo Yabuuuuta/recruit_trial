@@ -3,7 +3,8 @@ $prefix: 'slide-up';
 .#{$prefix}{
     opacity: 0;
     visibility: hidden;
-    transition: 1.3s;
+    transition-property: transform;
+    transition-duration: 1.3s;
     transform: translateY(3rem);
 
     &.active{
