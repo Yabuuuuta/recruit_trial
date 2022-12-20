@@ -1,5 +1,7 @@
+import $ from 'jquery';
+import Swiper, { Pagination, Navigation } from 'swiper';
+
 import { debounce } from 'lodash-es';
-import baseNth from 'lodash-es/_baseNth';
 import Stats from 'stats-js';
 
 import EVENTS from '~/constants/event-names';
@@ -39,38 +41,34 @@ import EVENTS from '~/constants/event-names';
   window.addEventListener(EVENTS.LOAD, onLoad);
 })();
 
+$(function () {
+  // header fix ===================================
+  const keyHeight = $('.p-key').height();
 
+  function FixedAnime() {
+    const scrollHeight = $(window).scrollTop();
 
-
-$(function() {
-
-// header fix ===================================
-  let keyHeight = $('.p-key').height();
-
-  function FixedAnime(){
-    let scrollHeight = $(window).scrollTop();
-
-    if (scrollHeight >= keyHeight){
+    if (scrollHeight >= keyHeight) {
       $('body').addClass('is-in');
     } else {
       $('body').removeClass('is-in');
     }
-  };
+  }
 
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     FixedAnime();
   });
 
-// burger btn ===================================
+  // burger btn ===================================
   const bgrBtn = $('.p-header__bgr');
 
   // hover----
   bgrBtn.hover(
-    function(){
+    function () {
       $('.p-header__bgr-title').fadeOut();
       $('.p-header__bgr span').css('transform', 'translate(-50%, -1rem)');
     },
-    function(){
+    function () {
       $('.p-header__bgr-title').fadeIn();
       $('.p-header__bgr span').css('transform', 'translate(-50%, 0)');
     }
@@ -82,153 +80,138 @@ $(function() {
 
   function disabledScroll(event) {
     event.preventDefault();
-  };
+  }
 
-  bgrBtn.on('click', function(){
+  bgrBtn.on('click', function () {
     menu.fadeIn(200);
     document.addEventListener('touchmove', disabledScroll);
     document.addEventListener('mousewheel', disabledScroll);
   });
 
-  menuClose.on('click', function(){
+  menuClose.on('click', function () {
     menu.fadeOut(200);
   });
 
-// go pagetop btn ===============================
+  // go pagetop btn ===============================
 
-const goTop = $('.js-gotop');
+  const goTop = $('.js-gotop');
 
-  goTop.on('click', function(){
-    $('body, html').animate({
-      scrollTop: 0
-    }, 600);
+  goTop.on('click', function () {
+    $('body, html').animate(
+      {
+        scrollTop: 0,
+      },
+      600
+    );
     return false;
   });
 });
 
+// Product
+const product = () => {
+  const $card = $('.c-product-card');
+  const $modal = $('.p-modal');
 
+  // カルーセルの制御処理
 
-// product view more btn ===============================
+  // サムネイルの生成処理
+  const sliderThumbnail = new Swiper('.slider-thumbnail', {
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
 
-let productItem = $('.p-product__list-item');
+  // メインスライダーの生成処理
+  const swiper = new Swiper('.swiper', {
+    modules: [Pagination, Navigation],
+    loop: true,
+    // ページネーションの実装
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    // 矢印の実装
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    // サムネイルと連動
+    thumbs: {
+      swiper: sliderThumbnail,
+    },
+  });
 
-// btn
-productItem.hover(
-  function() {
-    $(this).addClass('hov-active');
-  },
-  function() {
-    $(this).removeClass('hov-active');
-  }
-) 
+  // モーダルの開閉処理
 
-// product modal ===============================
+  // View Moreボタンアニメーション
+  const $btnMore = $card.find('.c-product-card__head-btn');
+  $btnMore.on('mouseenter', (e) => {
+    e.preventDefault();
+    $(e.currentTarget).addClass('hov-active');
+  });
+  $btnMore.on('mouseleave', (e) => {
+    e.preventDefault();
+    $(e.currentTarget).removeClass('hov-active');
+  });
 
-let openModal = $('.p-product__list-item');
-let closeModal = $('.p-modal__close');
-let modal = $('.p-modal');
-let preventList = $('.p-modal__wrapper, .p-modal__swipebtn-prev, .p-modal__swipebtn-next, .c-modal-slide__switch-wrap');
+  // カードクリックでモーダルを開く
+  $card.on('click', (e) => {
+    // クリックしたカードのインデックスのスライドに移動
+    const slideNo = $(e.currentTarget).data('slide');
+    swiper.slideTo(slideNo, 0);
 
-openModal.on('click', function(){
-  modal.fadeIn(300);
-});
+    $modal.fadeIn(300);
+  });
 
-closeModal.on('click', function(){
-  modal.fadeOut(300);
-});
-
-preventList.on('click', function(event){
-  event.stopPropagation();
-}); 
-
-modal.on('click',function(){
-  modal.fadeOut(300);
-});  
-
-  // クリックしたスライドno.を取得
-$('.p-product__list-item').on('click',function(){
-  let slideNo = $(this).data('slide');
-  swiper.slideTo(slideNo, 0);
-});
-
+  // Closeクリックでモーダルを閉じる
+  const $closeElm = $modal.find('[data-close]');
+  $closeElm.on('click', (e) => {
+    $modal.fadeOut(300);
+  });
+};
+product();
 
 // slide up ===============================
+const slideUp = () => {
+  const $elm = $('.slide-up');
 
-$(window).on('load scroll', function() {
-  const slideUp = $('.slide-up');
-
-  slideUp.each(function() { 
-    let target = $(this).offset().top;
-		let scroll = $(window).scrollTop();
-		let height = $(window).height();
-		if (scroll > target - height){
-			$(this).addClass('active');
-		};
+  $elm.each((i, e) => {
+    const ob = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // 分割代入
+        const { isIntersecting } = entry;
+        if (isIntersecting) {
+          $(e).addClass('active');
+          ob.disconnect();
+        }
+      });
+    });
+    ob.observe(e);
   });
-});
-
+};
+slideUp();
 
 // slide left ===============================
 
- $(window).on('load scroll', function() {
+$(window).on('load scroll', function () {
   const slideLeft = $('.slide-left');
 
-  slideLeft.each(function() { 
-    let target = $(this).offset().top;
-		let scroll = $(window).scrollTop();
-		let height = $(window).height();
-		if (scroll > target - height){
-			$(this).addClass('active');
-		};
+  slideLeft.each(function () {
+    const target = $(this).offset().top;
+    const scroll = $(window).scrollTop();
+    const height = $(window).height();
+    if (scroll > target - height) {
+      $(this).addClass('active');
+    }
   });
 });
 
-  
 // set view width (except scrollbar) ===============================
 
-const setVw = function() {
+const setVw = function () {
   const vw = document.documentElement.clientWidth / 100;
   document.documentElement.style.setProperty('--vw', `${vw}px`);
-}
+};
 window.addEventListener('DOMContentLoaded', setVw);
 window.addEventListener('resize', setVw);
-
-
-// swiper =============================================================
-
-//サムネイル
-var sliderThumbnail = new Swiper('.slider-thumbnail', {
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesVisibility: true,
-  watchSlidesProgress: true,
-});
-
-//スライダー
-const swiper = new Swiper(".swiper", {  
-  loop: true,
-  // ページネーション
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // 前後の矢印
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  //サムネイル
-  thumbs: {
-    swiper: sliderThumbnail
-  }
-});
-
-
-
-
-
-  
-
-
-
-

@@ -15,8 +15,8 @@
     "start": "cross-env NODE_ENV=development npm-run-all -s _clean:preview _build:dev _monitor",
     "watch": "cross-env NODE_ENV=development npm-run-all -s _monitor",
     "build": "cross-env NODE_ENV=production npm-run-all -s _clean:dest _build:prod",
-    "_lint-scripts:config": "eslint -c .eslintrc.js .eslintrc.js --fix --ignore-pattern '!.eslintrc.js'",
-    "_lint-scripts:src": "eslint *.js -c .eslintrc.js --fix",
+    "_lint-scripts:config": "eslint -c .eslintrc.js '.eslintrc.js' --fix --ignore-pattern '!.eslintrc.js'",
+    "_lint-scripts:src": "eslint './src/js/**/*.js' -c .eslintrc.js --fix",
     "lint-scripts": "npm-run-all -s _lint-scripts:*",
     "_lint-styles:stylelint": "stylelint src/**/*.scss --config .stylelintrc.json --fix",
     "_lint-styles:prettier": "prettier-stylelint src/**/*.scss --quiet --write",
@@ -105,8 +105,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "jquery": "^3.6.2",
     "lodash-es": "^4.17.15",
     "ress": "^3.0.0",
-    "stats-js": "^1.0.1"
+    "stats-js": "^1.0.1",
+    "swiper": "^8.4.5"
   }
 }

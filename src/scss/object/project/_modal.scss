@@ -1,102 +1,108 @@
-.p-modal{
-    display: none;
+.p-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $modal;
+  display: none;
+  overflow-y: scroll;
 
-    background-color: #000;
-    position: fixed;
+  &__bg {
+    position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    z-index: $modal;
-    overflow-y: scroll;
+    left: 0;
+    z-index: -1;
+    background-color: #000;
+  }
 
-    &__inner{
-        max-width: 132rem;
-        position: relative;
-        @include pc{
-            margin: 0 auto;
-            padding: 15rem 0;
-        }
-        @include mobile{
-            padding: 6rem 0 10rem;
-        }
+  &__inner {
+    position: relative;
+    max-width: 132rem;
+    @include pc {
+      padding: 15rem 0;
+      margin: 0 auto;
+    }
+    @include mobile {
+      padding: 6rem 0 10rem;
+    }
+  }
+
+  &__slide {
+    position: relative;
+  }
+
+  &__switch {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include pc {
+      width: 10rem;
+      height: 10rem;
+    }
+    @include mobile {
+      width: 6rem;
+      height: 6rem;
     }
 
-    &__slide{
-         position: relative;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 3.5rem;
+      height: 0.1rem;
+      background-color: #fff;
+      @include mobile {
+        width: 2.5rem;
+      }
+      &:nth-of-type(1) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &:nth-of-type(2) {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
     }
+  }
 
-    &__switch{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-
+  &__swipebtn-next {
+    @include mobile {
+      top: unset;
+      right: 13rem;
+      bottom: -3.8rem;
     }
-
-    &__close{
-        position: absolute;
-        right: 0;
-        top: 0;
-        @include pc{
-            width: 10rem;
-            height: 10rem;    
-        }
-        @include mobile{
-            width: 6rem;
-            height: 6rem;
-        }
-
-        span{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 3.5rem;
-            height: .1rem;
-            background-color: #fff;
-            @include mobile{
-                width: 2.5rem;
-            }
-            &:nth-of-type(1){
-                transform: translate(-50%, -50%) rotate(-45deg);
-            }
-            &:nth-of-type(2){
-                transform: translate(-50%, -50%) rotate(45deg);
-            }
-        }
+    &::after {
+      @include pc {
+        font-size: 3rem;
+        color: #fff;
+      }
+      @include mobile {
+        font-size: 1.2rem;
+      }
     }
+  }
 
-    &__swipebtn-next{
-        @include mobile{
-            top: unset;
-            bottom: -3.8rem;
-            right: 13rem;
-        }
-        &::after{
-            @include pc{
-                color: #fff;
-                font-size: 3rem;
-            }
-            @include mobile{
-                font-size: 1.2rem;
-            }
-        }
+  &__swipebtn-prev {
+    @include mobile {
+      top: unset;
+      bottom: -3.8rem;
+      left: 13rem;
     }
-    
-    &__swipebtn-prev{
-        @include mobile{
-            top: unset;
-            bottom: -3.8rem;
-            left: 13rem;
-        }
-        &::after{
-            @include pc{
-                font-size: 3rem;
-                color: #fff;
-            }
-            @include mobile{
-                font-size: 1.2rem;
-            }
-        }
+    &::after {
+      @include pc {
+        font-size: 3rem;
+        color: #fff;
+      }
+      @include mobile {
+        font-size: 1.2rem;
+      }
     }
-
+  }
 }

@@ -1,3 +1,5 @@
+<div class="p-modal__bg" data-close></div>
+
 <div class="swiper p-modal__inner">
     <div class="swiper-wrapper p-modal__wrapper">
 
@@ -14,7 +16,7 @@
                     <div class="c-modal-slide__num">
                         <span class="c-modal-slide__num-prev swiper-button-prev"></span>
                         <p class="c-modal-slide__num-current"><%= num+1 %>/4</p>
-                        <span class="c-modal-slide__num-next swiper-button-next"></span>                    
+                        <span class="c-modal-slide__num-next swiper-button-next"></span>
                     </div>
                     <div class="p-modal__txt c-modal-slide__txt">
                         <h3 class="c-modal-slide__txt-ttl">ダミーダミーダミー</h3>
@@ -30,7 +32,7 @@
     </div>
 
     <!-- ×ボタン -->
-    <div class="p-modal__close u-hov" role="button">
+    <div class="p-modal__close u-hov" role="button" data-close>
         <span></span>
         <span></span>
     </div>
@@ -46,6 +48,6 @@
                 <li class="swiper-slide c-modal-slide__switch-list"><img src="assets/img/pic_product0<%= thumb +1 %>.jpg" alt=""></li>
             <% } %>
         </div>
-    </div>    
+    </div>
 </div>
 

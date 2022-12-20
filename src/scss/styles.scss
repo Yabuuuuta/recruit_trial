@@ -1,8 +1,9 @@
 @import '~mathsass/dist/_math';
 @import '~ress/dist/ress.min.css';
+@import '~swiper/swiper-bundle.css';
 
 /* ==========================================================================
-Setting 
+Setting
 ========================================================================= */
 @import 'setting/variable/_index';
 @import 'setting/variable/_calc';
@@ -13,9 +14,8 @@ Setting
 @import 'setting/variable/_width';
 @import 'setting/variable/_z-index';
 
-
 /* ==========================================================================
-Tool 
+Tool
 ========================================================================== */
 @import 'tool/_index';
 @import 'tool/_mixin';
@@ -35,7 +35,7 @@ Layout
 @import 'layout/_nav';
 
 /* ==========================================================================
-Object 
+Object
 ========================================================================== */
 @import 'object/component/_contact';
 @import 'object/component/_footer-inner';
@@ -65,10 +65,3 @@ Object
 @import 'object/utility/_hover';
 @import 'object/utility/_slide-up';
 @import 'object/utility/_slide-left';
-
-
-
-
-
-
-
