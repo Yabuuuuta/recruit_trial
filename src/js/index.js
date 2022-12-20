@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import Swiper, { Pagination, Navigation } from 'swiper';
+
 import { debounce } from 'lodash-es';
 import baseNth from 'lodash-es/_baseNth';
 import Stats from 'stats-js';
@@ -206,6 +209,8 @@ var sliderThumbnail = new Swiper('.slider-thumbnail', {
 
 //スライダー
 const swiper = new Swiper(".swiper", {  
+  modules: [Pagination, Navigation],
+
   loop: true,
   // ページネーション
   pagination: {
