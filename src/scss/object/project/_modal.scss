@@ -1,7 +1,8 @@
 .p-modal{
-    display: none;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 
-    background-color: #000;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,6 +10,16 @@
     bottom: 0;
     z-index: $modal;
     overflow-y: scroll;
+
+    &__bg{
+        background-color: #000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;    
+    }
 
     &__inner{
         max-width: 132rem;

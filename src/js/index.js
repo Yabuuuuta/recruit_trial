@@ -111,48 +111,35 @@ const goTop = $('.js-gotop');
 
 
 
-// product view more btn ===============================
-
-let productItem = $('.p-product__list-item');
-
-// btn
-productItem.hover(
-  function() {
-    $(this).addClass('hov-active');
-  },
-  function() {
-    $(this).removeClass('hov-active');
-  }
-) 
 
 // product modal ===============================
 
-let openModal = $('.p-product__list-item');
-let closeModal = $('.p-modal__close');
-let modal = $('.p-modal');
-let preventList = $('.p-modal__wrapper, .p-modal__swipebtn-prev, .p-modal__swipebtn-next, .c-modal-slide__switch-wrap');
+// let openModal = $('.p-product__list-item');
+// let closeModal = $('.p-modal__close');
+// let modal = $('.p-modal');
+// let preventList = $('.p-modal__wrapper, .p-modal__swipebtn-prev, .p-modal__swipebtn-next, .c-modal-slide__switch-wrap');
 
-openModal.on('click', function(){
-  modal.fadeIn(300);
-});
+// openModal.on('click', function(){
+//   modal.fadeIn(300);
+// });
 
-closeModal.on('click', function(){
-  modal.fadeOut(300);
-});
+// closeModal.on('click', function(){
+//   modal.fadeOut(300);
+// });
 
-preventList.on('click', function(event){
-  event.stopPropagation();
-}); 
+// preventList.on('click', function(event){
+//   event.stopPropagation();
+// }); 
 
-modal.on('click',function(){
-  modal.fadeOut(300);
-});  
+// modal.on('click',function(){
+//   modal.fadeOut(300);
+// });  
 
   // クリックしたスライドno.を取得
-$('.p-product__list-item').on('click',function(){
-  let slideNo = $(this).data('slide');
-  swiper.slideTo(slideNo, 0);
-});
+// $('.p-product__list-item').on('click',function(){
+//   let slideNo = $(this).data('slide');
+//   swiper.slideTo(slideNo, 0);
+// });
 
 
 // slide up ===============================
@@ -197,36 +184,76 @@ window.addEventListener('DOMContentLoaded', setVw);
 window.addEventListener('resize', setVw);
 
 
-// swiper =============================================================
 
-//サムネイル
-var sliderThumbnail = new Swiper('.slider-thumbnail', {
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesVisibility: true,
-  watchSlidesProgress: true,
-});
 
-//スライダー
-const swiper = new Swiper(".swiper", {  
-  modules: [Pagination, Navigation],
 
-  loop: true,
-  // ページネーション
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // 前後の矢印
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  //サムネイル
-  thumbs: {
-    swiper: sliderThumbnail
-  }
-});
+
+
+// product　============================================
+const product = () => {
+
+
+  const $modal = $('.p-modal');
+  const $card = $('.c-product-card');
+  $modal.hide();
+
+  //モーダルの開閉
+
+    //view more アニメーション
+    const $btnMore = $('.p-product__list-item');
+    $btnMore.on('mouseenter', (e) => {
+      e.preventDefault();
+      $(e.currentTarget).addClass('hov-active');
+    });
+    $btnMore.on('mouseleave', (e) => {
+      e.preventDefault();
+      $(e.currentTarget).removeClass('hov-active');
+    });
+
+
+    //カードクリックで開く
+
+    $card.on('click', (e) => {
+      $modal.fadeIn(300);
+    });
+
+    //closeで閉じる
+    const $closeElm = $modal.find('[data-close]');
+    $closeElm.on('click', (e) => {
+      $modal.fadeOut(300);
+    });
+
+  //スライダーの処理
+    const swiper = new Swiper(".swiper", {  
+    modules: [Pagination, Navigation],
+
+    loop: true,
+    // ページネーション
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    // 前後の矢印
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    //サムネイル
+    thumbs: {
+      swiper: sliderThumbnail
+    }
+    });
+
+    //サムネイル生成
+    var sliderThumbnail = new Swiper('.slider-thumbnail', {
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+};
+
+product();
 
 
 
