@@ -97,6 +97,15 @@ $(function() {
     menu.fadeOut(200);
   });
 
+
+
+// header ===============================================
+
+
+
+
+
+
 // go pagetop btn ===============================
 
 const goTop = $('.js-gotop');
@@ -110,68 +119,76 @@ const goTop = $('.js-gotop');
 });
 
 
-
-
-// product modal ===============================
-
-// let openModal = $('.p-product__list-item');
-// let closeModal = $('.p-modal__close');
-// let modal = $('.p-modal');
-// let preventList = $('.p-modal__wrapper, .p-modal__swipebtn-prev, .p-modal__swipebtn-next, .c-modal-slide__switch-wrap');
-
-// openModal.on('click', function(){
-//   modal.fadeIn(300);
-// });
-
-// closeModal.on('click', function(){
-//   modal.fadeOut(300);
-// });
-
-// preventList.on('click', function(event){
-//   event.stopPropagation();
-// }); 
-
-// modal.on('click',function(){
-//   modal.fadeOut(300);
-// });  
-
-  // クリックしたスライドno.を取得
-// $('.p-product__list-item').on('click',function(){
-//   let slideNo = $(this).data('slide');
-//   swiper.slideTo(slideNo, 0);
-// });
-
-
 // slide up ===============================
 
-$(window).on('load scroll', function() {
-  const slideUp = $('.slide-up');
+// $(window).on('load scroll', function() {
+//   const slideUp = $('.slide-up');
 
-  slideUp.each(function() { 
-    let target = $(this).offset().top;
-		let scroll = $(window).scrollTop();
-		let height = $(window).height();
-		if (scroll > target - height){
-			$(this).addClass('active');
-		};
+//   slideUp.each(function() { 
+//     let target = $(this).offset().top;
+// 		let scroll = $(window).scrollTop();
+// 		let height = $(window).height();
+// 		if (scroll > target - height){
+// 			$(this).addClass('active');
+// 		};
+//   });
+// });
+
+
+const slideUp = () => {
+  const $upElm = $('.slide-up'); //.slide-upクラスを定数に
+
+  //$.each(対象オブジェクト, function(index繰り返し対象 ,val){ 繰り返し処理 }
+  $upElm.each((i,e) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {  //入ってきたら
+        const { isIntersecting } = entry; // "交わったら"を定数化
+        if (isIntersecting) { //もし交わったら以下の処理を実行
+          $(e).addClass('active'); //クラス名を追加
+          observer.disconnect(); //全ての対象要素について状態変化の監視停止
+        }
+      });
+    });
+    observer.observe(e); //要素を監視される対象要素として追加
   });
-});
+};
+slideUp();
 
 
 // slide left ===============================
 
- $(window).on('load scroll', function() {
-  const slideLeft = $('.slide-left');
+//  $(window).on('load scroll', function() {
+//   const slideLeft = $('.slide-left');
 
-  slideLeft.each(function() { 
-    let target = $(this).offset().top;
-		let scroll = $(window).scrollTop();
-		let height = $(window).height();
-		if (scroll > target - height){
-			$(this).addClass('active');
-		};
+//   slideLeft.each(function() { 
+//     let target = $(this).offset().top;
+// 		let scroll = $(window).scrollTop();
+// 		let height = $(window).height();
+// 		if (scroll > target - height){
+// 			$(this).addClass('active');
+// 		};
+//   });
+// });
+
+const slideLeft = () => {
+  const $leftElm = $('.slide-left');
+
+  $leftElm.each((i,e) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const { isIntersecting } = entry;
+        if (isIntersecting) {
+          $(e).addClass('active');
+          observer.disconnect();
+        }
+      });
+    });
+    observer.observe(e);
   });
-});
+};
+slideLeft();
+
+
 
   
 // set view width (except scrollbar) ===============================
@@ -185,13 +202,8 @@ window.addEventListener('resize', setVw);
 
 
 
-
-
-
-
 // product　============================================
 const product = () => {
-
 
   const $modal = $('.p-modal');
   const $card = $('.c-product-card');
@@ -212,8 +224,10 @@ const product = () => {
 
 
     //カードクリックで開く
-
     $card.on('click', (e) => {
+      const slideNo = $(e.currentTarget).data('slide');
+      swiper.slideTo(slideNo, 0);
+  
       $modal.fadeIn(300);
     });
 
@@ -225,27 +239,27 @@ const product = () => {
 
   //スライダーの処理
     const swiper = new Swiper(".swiper", {  
-    modules: [Pagination, Navigation],
+      modules: [Pagination, Navigation],
+      loop: true,
 
-    loop: true,
-    // ページネーション
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    // 前後の矢印
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    //サムネイル
-    thumbs: {
-      swiper: sliderThumbnail
-    }
+      // ページネーション
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      // 前後の矢印
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      //サムネイル
+      thumbs: {
+        swiper: sliderThumbnail,
+      },
     });
 
     //サムネイル生成
-    var sliderThumbnail = new Swiper('.slider-thumbnail', {
+    const sliderThumbnail = new Swiper('.slider-thumbnail', {
       slidesPerView: 4,
       freeMode: true,
       watchSlidesVisibility: true,

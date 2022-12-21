@@ -1,8 +1,4 @@
 .p-modal{
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-
     position: fixed;
     top: 0;
     left: 0;
@@ -13,12 +9,12 @@
 
     &__bg{
         background-color: #000;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: -1;    
+        z-index: -1;
     }
 
     &__inner{
@@ -45,7 +41,7 @@
     }
 
     &__close{
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 0;
         @include pc{
