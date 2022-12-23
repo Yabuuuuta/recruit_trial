@@ -8,19 +8,21 @@
             display: grid;
             grid-template-columns: 38fr 80fr;
             gap: 2rem;
-            margin: 0 6rem;
+            margin: 0 10rem;
+            padding-bottom: 4rem;
         }
     }
 
     &__txt{
         position: relative;
         background-color: #fff;
+        text-align: left;
         @include pc{
             order: 1;
-            padding: 4.8rem 4rem;
+            padding: vw-calc(48) vw-calc(40);
         }
         @include mobile{
-            padding: 3rem 2rem;
+            padding: 5rem 2rem;
         }
     }
 
@@ -80,8 +82,8 @@
     &__switch{
         @include pc{
             position: absolute;
-            left: 7.5rem;
-            bottom: 11rem;
+            left: 11.5rem;
+            bottom: 0;
             width: percentage(350px / 1440px);
             z-index: 12;
         }
@@ -96,10 +98,12 @@
         letter-spacing: .1em;
         color: #000;
         padding-left: 3rem;
+        text-align: left;
     }
 
     &__switch-wrap{
         display: flex;
+        width: 100%;
         gap: 1rem;
         padding-top: 2.6rem;
         margin: 0 !important;
@@ -109,6 +113,7 @@
         list-style: none;
         position: relative;
         background-color: #fff;
+        flex: 1;
 
         img{
             box-sizing: border-box;
@@ -129,14 +134,20 @@
             color: #fff;
             position: absolute;
             right: 0;
-            bottom: 9rem;
+            bottom:  -2rem;
             order: 3;
-            padding: 2rem 6rem;
+            padding: 2rem 10rem;
         }
         @include mobile{
             background-color: #fff;
             justify-content: center;
             padding: .5rem;
+            position: absolute;
+            top: 28rem;
+            left: 0;
+            bottom: initial;
+            width: 100%;
+            height: 3.5rem;
         }
     }
 
@@ -155,10 +166,15 @@
     }
 
     &__num-prev{
-        padding-right: 2rem;
+        padding-right: 3rem;
     }
 
     &__num-next{
-        padding-left: 2rem;
+        padding-left: 3rem;
+    }
+
+    &__num-current{
+        width: 3rem;
+        position: initial;
     }
 }

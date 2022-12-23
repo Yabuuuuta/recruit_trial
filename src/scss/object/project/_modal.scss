@@ -4,29 +4,27 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: $modal;
+    text-align: center;
     overflow-y: scroll;
+    z-index: $modal;
+    // display: flex;
+    // align-items: center;
+    background-color: #000;
 
-    &__bg{
-        background-color: #000;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
+    @include pc{
+        padding: 15rem 0;
+    }
+    @include mobile{
+        padding: 6rem 0;
     }
 
+
     &__inner{
-        max-width: 132rem;
+        max-width: 140rem;
         position: relative;
-        @include pc{
-            margin: 0 auto;
-            padding: 15rem 0;
-        }
-        @include mobile{
-            padding: 6rem 0 10rem;
-        }
+        vertical-align: middle;
+        z-index: 1;
+        width: 100%;
     }
 
     &__slide{
@@ -37,13 +35,13 @@
         position: absolute;
         bottom: 0;
         left: 0;
-
     }
 
     &__close{
         position: fixed;
         right: 0;
         top: 0;
+        z-index: $modal;
         @include pc{
             width: 10rem;
             height: 10rem;    
@@ -73,6 +71,9 @@
     }
 
     &__swipebtn-next{
+        @include pc{
+            width: 10rem;
+        }
         @include mobile{
             top: unset;
             bottom: -3.8rem;
@@ -90,6 +91,9 @@
     }
     
     &__swipebtn-prev{
+        @include pc{
+            width: 10rem;
+        }
         @include mobile{
             top: unset;
             bottom: -3.8rem;
