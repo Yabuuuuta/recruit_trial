@@ -1,0 +1,15 @@
+$prefix: 'slide-up';
+
+.#{$prefix}{
+    opacity: 0;
+    visibility: hidden;
+    transition-property: transform;
+    transition-duration: 1.3s;
+    transform: translateY(3rem);
+
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}

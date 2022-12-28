@@ -35,8 +35,6 @@ const img_path = assetsRelative() + 'img';
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
 
-  <link rel="shortcut icon" href="<%= img_path; %>/common/favicon.ico">
-
   <title><%= info[page_name].title; %></title>
 
   <meta name="description" content="<%= info[page_name].description; %>">
@@ -55,18 +53,87 @@ const img_path = assetsRelative() + 'img';
   <meta name="twitter:image" content="<%= info[page_name].ogp_image; %>" />
   <meta name="twitter:description" content="<%= info[page_name].description; %>" />
 
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    
+  <!-- adobe font -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'hzf0fzc',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
+  <!-- jQuery -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> -->
+
+  <!-- swiper -->
+  <!-- <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+
   <!-- local CSS -->
   <%- include(INCLUDE_PATH + 'foundation/_styles', { css_path: assetsRelative() + 'css' }); -%>
+
+
 </head>
 
 <body id="<%= page_name; %>">
 
 <%# start page content -%>
 
+<header class="l-header">
+  <%- include(INCLUDE_PATH + 'object/project/_header'); _%>
+
+  <%- include(INCLUDE_PATH + 'object/project/_menu'); _%>
+
+</header>
+
+<main>
+<%- include(INCLUDE_PATH + 'object/project/_key'); _%>
+
+<section class="p-about l-main">
+  <%- include(INCLUDE_PATH + 'object/project/_about'); _%>
+</section> 
+<section class="p-number l-main">
+  <%- include(INCLUDE_PATH + 'object/project/_number'); _%>
+</section> 
+<section class="p-product l-main">
+  <%- include(INCLUDE_PATH + 'object/project/_product'); _%>
+</section>
+
+<div class="p-bottom slide-up">
+  <picture>
+      <source srcset="assets/img/pic_product_bottom_sp.jpg" media="(max-width: 768px)" width="375" height="250">
+      <img src="assets/img/pic_product_bottom.jpg" alt="" width="1440" height="480">
+  </picture>
+</div>
+
+<section>
+  <%- include(INCLUDE_PATH + 'object/project/_contact'); _%>
+</section>
+</main>
+
+<footer class="l-footer">
+  <%- include(INCLUDE_PATH + 'object/project/_footer'); _%>
+</footer>
+
+<div class="p-modal">
+  <%- include(INCLUDE_PATH + 'object/project/_modal'); _%>
+</div>
+
+
 <%# end page content -%>
 
-  <!-- local JS -->
-  <%- include(INCLUDE_PATH + 'foundation/_scripts.ejs', { js_path: assetsRelative() + 'js' }); -%>
+<!-- local JS -->
+<%- include(INCLUDE_PATH + 'foundation/_scripts.ejs', { js_path: assetsRelative() + 'js' }); -%>
+
 
 </body>
 </html>

@@ -1,0 +1,133 @@
+.c-product-card{
+    cursor: pointer;
+    padding-top: 6rem;
+    &:nth-of-type(1){
+        padding-top: 0;
+    }
+    @include pc{
+        &:nth-of-type(2){
+            padding-top: 0;
+        } 
+    }
+    @include mobile{
+        padding-top: 4rem;
+    }
+
+    &__img{
+        overflow: hidden;
+        img{
+            vertical-align: bottom;
+            width: 100%;
+            height: auto;
+            transition-property: transform;
+            transition-duration: .4s;
+
+            .hov-active &{
+                @media (hover: hover) {
+                    transform: scale(1.05);
+                    transition-property: transform;
+                    transition-duration: .4s;
+                }
+            }
+        }
+    }
+
+    &__head{
+        padding-top: 2rem;
+        letter-spacing: .025em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile{
+            padding-top: 1rem;
+        }
+
+    }
+
+    &__head-ttl{
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+
+    &__head-btn{
+        font-size: 1rem;
+        font-family: $lato;
+        display: flex;
+        align-items: center;
+    }
+
+    &__head-btn-ttl{
+        padding-right: 2.1rem;
+    }
+
+    &__head-btn-circle{
+        width: 6.2rem;
+        height: 6.2rem;
+        position: relative;
+        @include mobile{
+            width: 5.1rem;
+            height: 5.1rem;
+        }
+
+        svg{
+            width: 6.2rem;
+            height: 6.2rem;
+            transform: rotate(-90deg);
+            border: 1px solid rgba(0,0,0,.1);
+            border-radius: 50%;
+
+            @include mobile{
+                width: 5.1rem;
+                height: 5.1rem;    
+            }
+        }
+
+        circle{
+            fill: transparent;
+            .hov-active &{
+                @media (hover: hover) {
+
+                stroke: rgba(88,126,81,.5);
+                stroke-width: 2px;
+                stroke-dasharray: 0 377;
+                animation: makeCircle 1s ease 0s 1 forwards;
+                }
+            }
+        }
+
+        &::before{
+            content: "";
+            width: 1.5rem;
+            height: 0.1rem;
+            background-color: $bg-black;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        &::after{
+            content: "";
+            width: 1.5rem;
+            height: 0.1rem;
+            background-color: $bg-black;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__txt{
+        font-size: 1.3rem;
+        padding-top: 1.5rem;
+        letter-spacing: .025em;
+        @include mobile{
+            padding-top: 1rem;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+    }
+}

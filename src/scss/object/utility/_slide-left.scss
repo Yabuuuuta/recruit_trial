@@ -1,0 +1,15 @@
+$prefix: 'slide-left';
+
+.#{$prefix}{
+    opacity: 0;
+    visibility: hidden;
+    transition-property: transform;
+    transition-duration: 1.3s;
+    transform: translateX(5rem);
+
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}

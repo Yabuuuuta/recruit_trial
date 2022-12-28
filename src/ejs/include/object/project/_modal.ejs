@@ -1,0 +1,52 @@
+<div class="swiper p-modal__inner">
+    <div class="swiper-wrapper p-modal__wrapper">
+
+        <!-- 各スライド -->
+        <% for (var num = 0; num < 4; num++) { %>
+            <div class="swiper-slide p-modal__slide c-modal-slide" data-current="<%= num+1 %>">
+                <div class="p-modal__flex c-modal-slide__flex">
+                    <div class="p-modal__img c-modal-slide__img">
+                        <picture>
+                            <source srcset="assets/img/pic_product0<%= num+1 %>_sp.jpg" media="(max-width: 767px)" width="335" height="223">
+                            <img src="assets/img/pic_product0<%= num+1 %>.jpg" alt="" width="800" height="600">
+                        </picture>
+                    </div>
+                    <div class="p-modal__txt c-modal-slide__txt">
+                        <h3 class="c-modal-slide__txt-ttl">ダミーダミーダミー</h3>
+                        <dl class="c-modal-slide__txt-spec">
+                            <dt>SPEC</dt>
+                            <dd>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</dd>
+                        </dl>
+                        <p class="c-modal-slide__txt-detail">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <!-- ×ボタン -->
+    <div class="p-modal__close u-hov" role="button" data-close="close">
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="p-modal__swipebtn-prev swiper-button-prev sp-hide"></div>
+    <div class="p-modal__swipebtn-next swiper-button-next sp-hide"></div>
+
+    <div class="c-modal-slide__num">
+        <span class="c-modal-slide__num-prev swiper-button-prev"></span>
+        <p class="c-modal-slide__num-current swiper-pagination"></p>
+        <span class="c-modal-slide__num-next swiper-button-next"></span>                    
+    </div>
+
+    <div class="swiper-container slider-thumbnail c-modal-slide__switch">
+        <p class="c-modal-slide__switch-ttl">OTHER IMAGES</p>
+        <ul class="swiper-wrapper c-modal-slide__switch-wrap">
+            <% for (var thumb = 0; thumb < 4; thumb ++) { %>
+                <li class="swiper-slide c-modal-slide__switch-list"><img src="assets/img/pic_product0<%= thumb +1 %>.jpg" alt=""></li>
+            <% } %>
+        </div>
+    </div>
+
+</div>
+

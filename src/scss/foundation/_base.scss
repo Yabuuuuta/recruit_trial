@@ -1,0 +1,40 @@
+@use 'setting/variable' as var;
+@use 'tool/function' as func;
+@use 'setting/variablr/_width';
+// @use 'tool/mixin' as mixin;
+
+@viewport {
+    width: device-width;
+    initial-scale: 1;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    
+
+    @include pc{
+        font-size: calc((10 * 100 / 16) * 1%);
+    }
+
+    @include mobile{
+        font-size: calc(10 / 375 * 100vw);
+    }
+
+
+}
+body{
+    width: inherit;
+    height: inherit;
+    font-family: $notosans;
+    font-style: normal;
+    font-weight: 400;
+    color: $black;
+    line-height: $lh-small;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // -webkit-font-feature-settings: 'palt';
+    // font-feature-settings: 'palt';
+    font-size: 1.6rem;
+}

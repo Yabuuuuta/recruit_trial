@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="14" viewBox="0 0 21 14">
+  <g id="グループ_283" data-name="グループ 283" transform="translate(-0.464 -0.108)">
+    <g id="長方形_38" data-name="長方形 38" transform="translate(0.464 0.108)" fill="none" stroke="#000" stroke-width="1">
+      <rect width="21" height="14" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="20" height="13" rx="0.5" fill="none"/>
+    </g>
+    <g id="グループ_26" data-name="グループ 26" transform="translate(1.188 0.961)">
+      <g id="グループ_25" data-name="グループ 25" transform="translate(0 0)">
+        <path id="パス_14" data-name="パス 14" d="M363.921,163.242l-9.834-8.889Z" transform="translate(-354.087 -154.353)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="パス_243" data-name="パス 243" d="M355.087,163.242l9.834-8.889Z" transform="translate(-345.266 -154.353)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="グループ_250" data-name="グループ 250" transform="translate(19.656 12.51) rotate(180)">
+        <path id="パス_14-2" data-name="パス 14" d="M6.937,5.992,0,0Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="パス_243-2" data-name="パス 243" d="M0,5.992,6.937,0Z" transform="translate(12.718 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

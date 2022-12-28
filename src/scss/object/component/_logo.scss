@@ -1,0 +1,15 @@
+.c-logo{
+    font-weight: 100;
+    @include pc{
+        align-self: baseline;
+    }
+    @include mobile{
+        padding-left: 2rem;
+    }
+
+    a{
+        text-decoration: none;
+        display: inline-block;
+    }
+
+}

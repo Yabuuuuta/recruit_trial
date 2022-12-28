@@ -1,0 +1,37 @@
+.c-menu-card{
+    @include mobile{
+        border-top: 1px solid rgba(255,255,255,.2);
+        padding: 2rem 0;
+        margin: 0 2rem;
+    }
+
+    &__title{
+        font-weight: bold;
+        position: relative;
+        padding-left: 8.8rem;
+        padding-bottom: 2.8rem;
+        @include mobile{
+            padding-left: 5.1rem;
+            padding-bottom: 2.5rem;
+            width: 23.1rem;
+            margin: 0 auto;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 5.1rem;
+            height: 5.1rem;
+            left: 0;
+            @include pc{
+                top: -1rem;
+            }
+
+            @include mobile{
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+    }
+}

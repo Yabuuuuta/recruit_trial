@@ -1,0 +1,52 @@
+/* ==========================================================================
+Media
+========================================================================== */
+@mixin pc{
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+@mixin mobile {
+    @media screen and (max-width: 767px){
+        @content;
+    }
+}
+
+/* ==========================================================================
+keyframs
+========================================================================== */
+@keyframes scroll-line {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 100%;
+    }
+}
+
+@keyframes makeCircle {
+    0% {
+        stroke-dasharray: 0 366;
+    }
+    99.9%,to {
+        stroke-dasharray: 366 366;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

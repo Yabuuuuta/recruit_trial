@@ -1,0 +1,186 @@
+.c-modal-slide{
+    @include pc{
+        position: relative;
+    }
+    
+    &__flex{
+        @include pc{
+            display: grid;
+            grid-template-columns: 38fr 80fr;
+            gap: 2rem;
+            margin: 0 10rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+    &__txt{
+        position: relative;
+        background-color: #fff;
+        text-align: left;
+        @include pc{
+            order: 1;
+            padding: vw-calc(48) vw-calc(40);
+        }
+        @include mobile{
+            padding: 5rem 2rem;
+        }
+    }
+
+    &__txt-ttl{
+        font-size: 1.8rem;
+    }
+
+    &__txt-spec{
+        dt{
+            font-family: $lato;
+            letter-spacing: .1em;
+            padding-top: 5rem;
+            font-size: 1.1rem;
+            @include mobile{
+                padding-top: 2rem;
+            }
+        }
+        dd{
+            font-size: 1.2rem;
+            padding-top: 1.3rem;
+            @include mobile{
+                padding-top: .8rem;
+            }
+        }
+    }
+
+    &__txt-detail{
+        padding-top: 3.3rem;
+        font-size: 1.4rem;
+        letter-spacing: .025em;
+        @include pc{
+            padding-bottom: 10rem;
+        }
+        @include mobile{
+            padding-top: 2.5rem;
+            line-height: 1.714;
+        }
+    }
+
+    &__img{
+        background-color: #fff;
+        position: relative;
+        @include pc{
+            order: 2;
+        }
+
+        img{
+            object-fit: cover;
+            aspect-ratio: 800/600;
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+        }
+    }
+
+
+    &__switch{
+        @include pc{
+            position: absolute;
+            left: 11.5rem;
+            bottom: 0;
+            width: percentage(350px / 1440px);
+            z-index: 12;
+        }
+        @include mobile{
+            display: none;
+        }
+    }
+
+    &__switch-ttl{
+        font-family: $lato;
+        font-size: 1.1rem;
+        letter-spacing: .1em;
+        color: #000;
+        padding-left: 3rem;
+        text-align: left;
+    }
+
+    &__switch-wrap{
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        padding-top: 2.6rem;
+        margin: 0 !important;
+    }
+
+    &__switch-list{
+        list-style: none;
+        position: relative;
+        background-color: #fff;
+        flex: 1;
+
+        img{
+            box-sizing: border-box;
+            border: 3px solid #fff;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+        }
+
+        @media (hover: hover) {
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__num{
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        @include pc{
+            color: #fff;
+            position: absolute;
+            right: 0;
+            bottom:  -2rem;
+            order: 3;
+            padding: 2rem 10rem;
+        }
+        @include mobile{
+            background-color: #fff;
+            justify-content: center;
+            padding: .5rem;
+            position: absolute;
+            top: 28rem;
+            left: 0;
+            bottom: initial;
+            width: 100%;
+            height: 3.5rem;
+        }
+    }
+
+    &__num-next,&__num-prev{
+        margin-top: 0;
+        position: initial;
+        height: initial;
+        &::after{
+            color: #fff;
+            font-size: 1.2rem;
+            @include mobile{
+                font-size: 1.1rem;
+                color: #000;
+            }
+        }
+    }
+
+    &__num-prev{
+        padding-right: 3rem;
+    }
+
+    &__num-next{
+        padding-left: 3rem;
+    }
+
+    &__num-current{
+        width: 3rem;
+        position: initial;
+    }
+}

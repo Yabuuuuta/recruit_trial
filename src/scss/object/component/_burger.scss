@@ -1,0 +1,27 @@
+.c-bgr{
+
+    .is-in &{
+        background-color: #000;
+    }
+   
+    &__title{
+        font-size: 1.1rem;
+        text-align: center;
+        font-family: $lato;
+        position: absolute;
+        .is-in &{
+            color: $white;
+        }
+    }
+
+    span{
+        background-color: #fff;
+        display: inline-block;
+        height: 1px;
+        width: 3.4rem;
+        position: absolute;
+        @include mobile{
+            width: 2.8rem;
+        }
+    }
+}

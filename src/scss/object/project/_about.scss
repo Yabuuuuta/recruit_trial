@@ -1,0 +1,183 @@
+.p-about{
+    
+    &__inner{
+        padding-top: 0;
+        padding-bottom: 0;
+    
+        @include pc{
+            display: flex;
+        }
+    }
+
+    &__ttl{
+        padding-top: 14.4rem;
+        color: $blue;
+        @include mobile{
+            padding-top: 7.2rem;
+            padding-left: 1rem;
+        }
+    }
+
+    &__ttl-main{
+        &--alo{
+            font-size: 4.8rem;
+        }
+    }
+
+    &__ttl-sub{
+        color: rgba(69, 85, 106, .5);
+        &::before{
+            background-color: #45556A;
+        }
+    }
+
+    &__left{
+        @include pc{
+            width: 50%;
+        }
+    }
+
+    &__left-first{
+        @include pc{
+            padding-bottom: 15.5rem;
+            padding-right: percentage(120px / 600px);
+        }
+        @include mobile{
+            padding-bottom: 6.5rem;
+        }
+    }
+
+    &__left-second{
+        position: relative;
+        padding: 11.8rem percentage(120px / 600px) 14.7rem 0;
+        @include mobile{
+            padding: 5.4rem 0 6rem;
+        }
+        &::after{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: $back;
+            display: block;
+            width: 50vw;
+            height: 100%;
+            content: '';
+            background-color: #F5F5F5;
+            @include mobile{
+                width: 100vw;
+                right: -2rem;
+            }
+        }
+    }
+
+    &__alo{
+        color: #fff;
+        position: relative;
+        @include pc{
+            width: 50%;
+        }
+
+        &::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: $back;
+            display: block;
+            width: calc(var(--vw) * 50);
+            height: 100%;
+            content: '';
+            background-color: $bg-blue;
+            @include mobile{
+                width: 100vw;
+                left: -2rem;
+            }
+        }
+    }
+
+    &__alo-fig{
+        padding-top: 14rem;
+        @include mobile{
+            padding-top: 5.5rem;
+        }
+        picture{
+            display: block;
+            padding-left: percentage(76px/720px);
+            padding-right: percentage(25px/720px);
+
+            @include mobile{
+                padding: 0 2.34rem;
+            }
+            img{
+                width: 100%;
+                height: auto;
+                vertical-align: bottom;
+            }
+        }
+    }
+    
+    &__alo-ttl{
+        @include pc{
+            padding-top: 5rem;
+            padding-left: percentage(180px/ 600px);
+        }
+        @include mobile{
+            padding-top: 2.5rem ;
+        }
+
+        &--main{
+           font-size: 4.8rem;
+           @include mobile{
+            font-size: 3.6rem;
+           } 
+        }
+        &--sub{
+            font-size: 1.2rem;
+            
+            &::before{
+                background-color: $white;
+                left: 0;
+                top: initial;
+                bottom: -3rem;
+                width: 4rem;
+                @include mobile{
+                    bottom: -2.8rem;
+                }
+            }
+        }
+    }
+
+    &__alo-txt{
+        font-size: 1.4rem;
+        @include pc{
+            padding-top: 6rem;
+            padding-left: percentage(180px/ 600px);
+        }
+        @include mobile{
+            padding-top: 5.6rem;
+            line-height: 1.857;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &__alo-img{
+        display: block;
+        @include pc{
+            margin-top: 6.2rem;
+            width: calc(var(--vw) * 50);
+            max-width: 72rem;
+            padding-left: percentage(120px / 600px);
+            position: absolute;
+            left: 0;
+        }
+        @include mobile{
+            width: 100vw;
+            position: relative;
+            margin-left: -2rem;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+        }
+    }
+}

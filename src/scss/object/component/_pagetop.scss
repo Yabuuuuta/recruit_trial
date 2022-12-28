@@ -1,0 +1,28 @@
+.c-pagetop{
+    font-family: $lato;
+    font-size: 1.4rem;
+
+    &__text{
+        position: relative;
+        padding-top: 2rem;
+        letter-spacing: .05em;
+
+        &::before{
+            position: absolute;
+            left: 50%;
+            top: 0;
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+            border: 1px solid;
+            border-color: #fff #fff transparent transparent;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+}

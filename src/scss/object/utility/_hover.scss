@@ -1,0 +1,16 @@
+$prefix: 'u-hov';
+
+.#{$prefix}{
+    
+    @media (hover: hover){
+        transition-property: opacity;
+        transition-duration: 0.3s;
+        &:hover{
+            opacity: 0.7;
+            transition-property: opacity;
+            transition-duration: 0.3s;
+            cursor: pointer;
+        }
+
+    }
+}

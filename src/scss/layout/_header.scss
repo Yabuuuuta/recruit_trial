@@ -1,0 +1,33 @@
+.l-header{
+
+    &__inner{
+        display: flex;
+        transition-property: transform;
+        transition-duration: 0,2s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $header;
+        // padding: 0 vw-calc(36);
+        width: 100%;
+        color: #fff; 
+        align-items: center;
+
+        .is-in &{
+            position: fixed;
+            background-color: $white;
+            color : #000;
+
+        .is-in &{
+            transform: translate(0);
+            opacity: 1;
+        }
+
+        }
+
+        @include mobile{
+            position: fixed;
+            color: #000;
+        }
+    }
+}

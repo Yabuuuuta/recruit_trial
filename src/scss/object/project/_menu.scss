@@ -1,0 +1,217 @@
+.p-menu{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $menu;
+    background-color: $bg-black;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    &__close{
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        top: 0;
+
+        @include pc{
+            right: 1rem;
+            .is-in &{
+                width: 8.8rem;
+                height: 8.8rem;
+            }
+        }
+        @include mobile{
+            width: 6rem;
+            height: 6rem;
+            right: 0;
+        }
+
+        span{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            display: inline-block;
+            background-color: #fff;
+            width: 3.5rem;
+            height: 0.1rem;
+
+            @include mobile{
+                width: 2.3rem;
+            }
+
+            &:nth-of-type(2){
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+    &__inner{
+        color: $white;
+        @include pc{
+            padding: 10rem 4rem 8rem;
+            height: 9rem;
+        }
+        @include mobile{
+            padding: 2rem;
+            height: 72.9rem;
+        }
+    }
+
+    &__content{
+        @include pc{
+            max-width: 960px;
+            margin: 0 auto;
+            padding-top: 12rem;  
+            padding: 12rem 0 19.2rem;  
+            display: grid;
+            grid-template-areas: 
+            'logo logo'
+            'contact nav'
+            'tel nav'
+            ;
+            grid-template-columns: percentage(540/960) percentage(420/960);
+        }
+    }
+
+
+    &__logo{
+        line-height: 1.384;
+        font-size: 2.6rem;
+        a{
+            color: #fff;
+        }
+
+        @include pc{
+            letter-spacing: .1em;
+            border-bottom: 1px solid #fff;
+            grid-area: logo;
+            padding-bottom: 4rem;
+            margin-bottom: 4rem;    
+            font-weight: 100;
+        }
+        @include mobile{
+            font-size: 1.5rem;
+            padding-left: 0;
+            font-weight: 500;
+        }
+
+    }
+
+    &__contact{
+        @include pc{
+            padding-top: 5.5rem;
+            grid-area: contact;
+            padding-left: 4rem;
+        }
+        @include mobile{
+            padding-bottom: 3.1rem;
+        }
+    }
+
+    &__contact-ttl{
+        &::before{
+            background: url(../img/icon_mail.svg) no-repeat left top/contain;
+        }
+    }
+
+    &__contact-btnwrap{
+        @include pc{
+            max-width: 32rem;
+            margin-left: 8.8rem;
+            margin-right: 9.3rem;
+        }
+    }
+
+    &__contact-btn{
+        width: 100%;
+        height: 4.8rem;
+        font-size: 1.4rem;
+        transition-property: background-color, color;
+        transition-duration: .3s;
+
+        &:hover{
+            @media (hover:hover){
+                background-color: #fff;
+                color: #000;
+                transition-property: background-color, color;
+                transition-duration: .3s;
+            }
+        }        
+    }
+
+    &__tel{
+        @include pc{
+            padding-bottom: 4.5rem;
+            padding-left: 4rem;
+            margin-top: 6.2rem;    
+            grid-area: tel;
+        }
+        @include mobile{
+            text-align: center;
+        }
+    }
+
+    &__tel-ttl{
+        &::before{
+            background: url(../img/icon_tel.svg) no-repeat left top/contain;
+        }
+    }
+
+    &__tel-num{
+        font-size: 3.6rem;
+        font-family: $lato;
+        line-height: 0.72;
+        font-weight: 300;
+        @include pc{
+            padding-left: 8.8rem;
+        }
+    }
+
+    &__tel-time{
+        font-size: 1.3rem;
+        @include pc{
+            padding-left: 8.8rem;
+            padding-top: .5rem;
+        }
+        @include mobile{
+            padding-top: .8rem;
+        }
+    }
+
+    &__nav{
+        @include pc{
+            border-left: 1px solid rgba(255,255,255,.1);
+            grid-area: nav;
+            padding: 4.5rem 0 4.5rem 10rem;
+        }
+        @include mobile{
+            padding: 4.8rem 2rem 1.9rem;
+        }
+    }
+
+    &__nav-lists{
+        font-size: 1.8rem;
+        letter-spacing: .025em;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        @include mobile{
+            font-size: 1.6rem;
+        }
+    }
+
+    &__nav-item{
+        @include mobile{
+            padding-bottom: 1.6rem;
+        }
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}

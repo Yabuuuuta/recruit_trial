@@ -1,0 +1,61 @@
+.p-number{
+
+    &__inner{
+        align-items: center;
+        @include pc{
+            display: flex;
+            padding: 12.5rem 4rem 15rem;
+        }
+        @include mobile{
+            padding-top: 4.9rem;
+            padding-bottom: 7rem;
+        }
+    }
+
+    &__graph{
+        position: relative;
+
+        @include pc{
+            width: 50%;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+        }
+    }
+
+    &__graph-ttl{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: vw-calc(35);
+        width: percentage(376px/600px);
+        @include mobile{
+            padding-top: 2rem;
+            width: 21.6rem;
+        }
+    }
+
+    &__graph-fig{
+        picture{
+            display: block;
+        }
+        @include pc{
+            padding-right: percentage(30px/600px);
+        }
+    }
+
+    &__paragraph{
+        @include pc{
+            padding-top: 5rem;
+            padding-left: percentage(120px/1200px);
+            width: 50%;
+
+        }
+        @include mobile{
+            padding-top: 6.1rem;
+        }
+    }
+}

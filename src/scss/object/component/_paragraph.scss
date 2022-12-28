@@ -1,0 +1,47 @@
+.c-paragraph{
+
+    &__head{
+        
+        &--big{
+            font-size: 3.2rem;
+            line-height: $lh-large;
+            padding-top: 10.9rem;
+            font-weight: 500;
+            font-style: normal;
+            color: $blue;
+            @include mobile{
+                font-size: 2.4rem;
+                padding-top: 4.9rem;
+            }
+        }
+
+        &--small{
+            font-size: 2.4rem;
+            line-height: $lh-mediun;
+            font-weight: 500;
+            font-style: normal;
+            color: $blue;
+            @include pc{
+                .p-number__paragraph &{
+                    font-weight: 700;
+                } 
+            }
+            @include mobile{
+                letter-spacing: .025em;
+                .p-product &{
+                    font-size: 2.1rem;
+                }
+            }
+            
+         }
+    }
+
+    &__text{
+        line-height: $lh-small;
+        padding-top: 4rem;
+        @include mobile{
+            padding-top: 2.5rem;
+            letter-spacing: .025em;
+        }
+    }
+}
