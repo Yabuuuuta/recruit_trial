@@ -44,61 +44,63 @@ import EVENTS from '~/constants/event-names';
 })();
 
 $(function () {
+  const bodyElm = document.body;
+
   // ////////////////////////////////////////////////////////  header
   // === javascript ===
   const header = () => {
     const bgrBtn = document.querySelector('.p-header__bgr');
     const menu = document.querySelector('.p-menu');
     const menuClose = document.querySelector('.js-menu-close');
+    const disNone = () => {
+      menu.style.display = 'none';
+    };
 
     // ハンバーガーメニューのhover Action ----------------
     const btnTitle = document.querySelector('.p-header__bgr-title');
-    const btnLine = document.querySelectorAll('.p-header__bgr > span');
+    const btnLines = bgrBtn.querySelectorAll(':scope > span');
+    console.log(btnTitle.querySelectorAll(':scope'));
     bgrBtn.addEventListener('mouseover', () => {
       btnTitle.classList.add('fadeout');
       btnTitle.style.display = 'none';
-      btnLine.forEach(function (e, i) {
+      btnLines.forEach(function (e, i) {
         e.style.transform = 'translate(-50%, -1rem)';
       });
     });
     bgrBtn.addEventListener('mouseleave', () => {
       btnTitle.classList.replace('fadeout', 'fadein');
       btnTitle.style.display = 'block';
-      btnLine.forEach(function (e, i) {
+      btnLines.forEach(function (e, i) {
         e.style.transform = 'translate(-50%, 0)';
       });
     });
 
     // menuの表示 --------------------------------------
     bgrBtn.addEventListener('click', () => {
-      const disabledScroll = (e) => {
-        e.preventDefault();
-      };
       menu.classList.add('fadein');
       menu.classList.remove('fadeout');
       menu.style.display = 'block';
-      document.addEventListener('touchmove', disabledScroll);
-      document.addEventListener('mousewheel', disabledScroll);
+      bodyElm.style.position = 'fixed';
     });
 
     menuClose.addEventListener('click', () => {
       menu.classList.remove('fadein');
       menu.classList.add('fadeout');
-      menu.style.display = 'none';
+      setTimeout(disNone, 300);
+      bodyElm.style.position = 'initial';
     });
 
     // -- key visualを超えたらfixedで固定 --------------------
     const keyElem = document.querySelector('.p-key');
-    const body = document.querySelector('body');
 
     function FixedAnime() {
       const keyHeight = keyElem.offsetHeight;
       const scrollHeight = window.pageYOffset;
 
       if (scrollHeight >= keyHeight) {
-        body.classList.add('is-in');
+        bodyElm.classList.add('is-in');
       } else {
-        body.classList.remove('is-in');
+        bodyElm.classList.remove('is-in');
       }
     }
     window.addEventListener('scroll', () => {
@@ -283,7 +285,6 @@ $(function () {
   const product = () => {
     const modal = document.querySelector('.p-modal');
     const card = document.querySelectorAll('.c-product-card');
-    const body = document.querySelector('body');
     const disNone = () => {
       modal.style.display = 'none';
     };
@@ -340,7 +341,7 @@ $(function () {
         modal.classList.add('fadein');
         modal.classList.remove('fadeout');
         modal.style.display = 'block';
-        body.style.overflow = 'hidden';
+        bodyElm.style.overflow = 'hidden';
       });
     });
 
@@ -351,7 +352,7 @@ $(function () {
       modal.classList.add('fadeout');
       modal.style.display = 'none';
       setTimeout(disNone, 300);
-      body.style.overflow = 'auto';
+      bodyElm.style.overflow = 'auto';
     });
 
     // モーダルの外側をクリックしたら閉じる --------------------------
@@ -363,7 +364,7 @@ $(function () {
           modal.classList.add('fadeout');
           modal.classList.remove('fadein');
           setTimeout(disNone, 300);
-          body.style.overflow = 'auto';
+          bodyElm.style.overflow = 'auto';
         }
       });
     });
