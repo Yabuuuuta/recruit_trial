@@ -2,7 +2,7 @@ import $ from 'jquery';
 import Swiper, { Pagination, Navigation, Thumbs } from 'swiper';
 
 import { debounce } from 'lodash-es';
-import baseNth from 'lodash-es/_baseNth';
+// import baseNth from 'lodash-es/_baseNth';
 import Stats from 'stats-js';
 
 import EVENTS from '~/constants/event-names';
@@ -76,10 +76,14 @@ $(function () {
     });
 
     // menuの表示 --------------------------------------
+    let nowPosition = 0;
+
     bgrBtn.addEventListener('click', () => {
       menu.classList.add('fadein');
       menu.classList.remove('fadeout');
       menu.style.display = 'block';
+      nowPosition = window.pageYOffset;
+      console.log(nowPosition);
       bodyElm.style.position = 'fixed';
     });
 
@@ -88,6 +92,7 @@ $(function () {
       menu.classList.add('fadeout');
       setTimeout(disNone, 300);
       bodyElm.style.position = 'initial';
+      window.scrollTo(0, nowPosition);
     });
 
     // -- key visualを超えたらfixedで固定 --------------------
