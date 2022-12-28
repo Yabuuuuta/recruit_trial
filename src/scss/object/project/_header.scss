@@ -154,6 +154,10 @@
             transition-property: transform;
             transition-duration: .3s;
 
+            &.hov-active{
+                transform: translate(-50%, -1rem);
+            }
+
             &:nth-of-type(1){
                 @include pc{
                     bottom: 4.3rem;

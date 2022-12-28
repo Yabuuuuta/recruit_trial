@@ -124,6 +124,12 @@
             height: auto;
             vertical-align: bottom;
         }
+
+        @media (hover: hover) {
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 
     &__num{
